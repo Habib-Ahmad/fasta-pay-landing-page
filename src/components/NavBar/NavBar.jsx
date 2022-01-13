@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import useStyles from './useStyles'
-import logo from '../assets/svg/logo.svg'
-import menuIcon from '../assets/svg/menu.svg'
-import { Button, Grid, IconButton, SwipeableDrawer } from '@mui/material'
 import { Box } from '@mui/system'
+import { Button, Grid, IconButton, SwipeableDrawer } from '@mui/material'
+import useStyles from './useStyles'
+import menuIcon from '../../assets/svg/menu.svg'
+import logo from '../../assets/svg/logo.svg'
 
 const NavBar = () => {
 	const [displayDrawer, setDisplayDrawer] = useState(false)
