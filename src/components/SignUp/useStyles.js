@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
 		position: 'relative',
 
 		[theme.breakpoints.down('sm')]: {
-			flexDirection: 'column'
+			flexDirection: 'column',
+			height: '189px'
 		}
 	},
 	largeCircle: {
@@ -57,11 +58,14 @@ const useStyles = makeStyles((theme) => ({
 			backgroundColor: '#fff',
 			color: '#000',
 			borderRadius: '60px',
-			// width: '237px',
-			width: '200px',
+			width: '237px',
 			height: '54px',
 			fontSize: 16,
-			textTransform: 'uppercase'
+			textTransform: 'uppercase',
+
+			[theme.breakpoints.down('lg')]: {
+				width: '200px'
+			}
 		}
 	}
 }))

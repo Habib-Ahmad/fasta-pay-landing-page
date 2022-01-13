@@ -5,7 +5,7 @@ export const theme = createTheme({
 		fontFamily: "'Poppins', 'sans-serif'",
 
 		allVariants: {
-			fontSize: 'clamp(0.8125rem, 2vw, 1rem)'
+			fontSize: 'clamp(0.875rem, 2vw, 1rem)'
 		},
 
 		h2: {
