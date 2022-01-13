@@ -14,7 +14,7 @@ const SignUp = () => {
 				<Typography variant='h2' sx={{ marginBottom: 1 }}>
 					Earn extra money as a fasta boss
 				</Typography>
-				<Typography className={classes.extraPadding}>
+				<Typography className={classes.txt2}>
 					Set your own schedule, become a Fasta boss
 				</Typography>
 			</Grid>

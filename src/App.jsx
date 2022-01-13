@@ -1,10 +1,10 @@
-// import { Box } from '@mui/material'
 import NavBar from './components/NavBar/NavBar'
 import Header from './components/Header/Header'
+import SignUp from './components/SignUp/SignUp'
+import ComingSoon from './components/ComingSoon/ComingSoon'
 import { BrowserRouter } from 'react-router-dom'
 import { theme } from './themes/theme'
 import { ThemeProvider } from '@mui/material/styles'
-import SignUp from './components/SignUp/SignUp'
 
 const App = () => {
 	return (
@@ -12,7 +12,8 @@ const App = () => {
 			<BrowserRouter>
 				<NavBar />
 				<Header />
-				<SignUp />
+				{/* <SignUp /> */}
+				<ComingSoon />
 			</BrowserRouter>
 		</ThemeProvider>
 	)

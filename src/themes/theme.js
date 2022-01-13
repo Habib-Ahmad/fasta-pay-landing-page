@@ -5,7 +5,7 @@ export const theme = createTheme({
 		fontFamily: "'Poppins', 'sans-serif'",
 
 		allVariants: {
-			fontSize: 'clamp(0.875rem, 2vw, 1rem)'
+			fontSize: 'clamp(1.875rem, 4vw, 1.125rem)'
 		},
 
 		h2: {
@@ -28,6 +28,15 @@ export const theme = createTheme({
 					boxShadow: 'none',
 					fontSize: 13,
 					textTransform: 'none'
+				}
+			}
+		},
+
+		MuiOutlinedInput: {
+			styleOverrides: {
+				root: {
+					backgroundColor: '#fff',
+					fontSize: 16
 				}
 			}
 		}

@@ -39,8 +39,9 @@ const useStyles = makeStyles((theme) => ({
 		placeItems: 'center',
 		zIndex: 100
 	},
-	extraPadding: {
+	txt2: {
 		'&.MuiTypography-root': {
+			fontSize: 'clamp(0.875rem, 2vw, 1rem)',
 			marginLeft: theme.spacing(-25),
 
 			[theme.breakpoints.down('md')]: {
