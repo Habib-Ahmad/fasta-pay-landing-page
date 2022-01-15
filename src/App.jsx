@@ -12,7 +12,7 @@ const App = () => {
 			<BrowserRouter>
 				<NavBar />
 				<Header />
-				{/* <SignUp /> */}
+				<SignUp />
 				<ComingSoon />
 			</BrowserRouter>
 		</ThemeProvider>

@@ -8,6 +8,11 @@ export const theme = createTheme({
 			fontSize: 'clamp(1.875rem, 4vw, 1.125rem)'
 		},
 
+		h1: {
+			fontSize: 'clamp(.8rem, 3.5vw, 2.5rem)',
+			fontWeight: '600'
+		},
+
 		h2: {
 			fontSize: 'clamp(1.25rem, 3.5vw, 2rem)',
 			fontWeight: '500'
@@ -23,11 +28,24 @@ export const theme = createTheme({
 	components: {
 		MuiButton: {
 			styleOverrides: {
+				root: {
+					boxShadow: 'none',
+					'&:hover': {
+						boxShadow: 'none'
+					}
+				},
+
 				contained: {
 					color: '#fff',
-					boxShadow: 'none',
-					fontSize: 13,
 					textTransform: 'none'
+				},
+
+				containedSizeMedium: {
+					fontSize: 13
+				},
+
+				sizeLarge: {
+					width: 200
 				}
 			}
 		},

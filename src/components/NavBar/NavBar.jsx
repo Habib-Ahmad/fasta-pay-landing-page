@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { Box } from '@mui/system'
-import { Button, Grid, IconButton, SwipeableDrawer } from '@mui/material'
+import {
+	Button,
+	Grid,
+	IconButton,
+	SwipeableDrawer,
+	Typography
+} from '@mui/material'
 import useStyles from './useStyles'
 import menuIcon from '../../assets/svg/menu.svg'
 import logo from '../../assets/svg/logo.svg'
@@ -29,7 +35,11 @@ const NavBar = () => {
 
 			<Grid item md={5} lg={4} className={classes.navBtnWrapper}>
 				<Button className={classes.navBtn} disableRipple>
-					Home
+					<Typography
+						sx={{ fontWeight: 700, color: '#00AEE8', fontSize: '1rem' }}
+					>
+						Home
+					</Typography>
 				</Button>
 				<Button className={classes.navBtn} disableRipple>
 					Become a boss
@@ -40,7 +50,9 @@ const NavBar = () => {
 			</Grid>
 
 			<Grid item md={3} lg={2} className={classes.contactBtnWrapper}>
-				<Button variant='contained'>Contact us</Button>
+				<Button variant='contained' size='medium'>
+					Contact us
+				</Button>
 			</Grid>
 
 			<Grid item xs={2} className={classes.menuWrapper}>
