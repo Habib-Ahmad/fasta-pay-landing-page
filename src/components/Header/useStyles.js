@@ -3,8 +3,7 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
 	header: {
 		position: 'relative',
-		minHeight: '110vh'
-		// padding: theme.spacing(0, 10)
+		minHeight: '100vh'
 	},
 	keke: {
 		width: '23vw',
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 			position: 'absolute',
 			top: 'clamp(10px, 6vh, 100px)',
 			zIndex: -100,
-			width: '35vw'
+			width: '28vw'
 		}
 	},
 	f: {
@@ -99,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	subHeading: {
 		'&.MuiTypography-root': {
-			fontSize: 'clamp(0.7rem, 2vw, 1rem)',
+			fontSize: 'clamp(0.8rem, 2vw, 1rem)',
 			width: '45%',
 			marginLeft: '30vw',
 			marginTop: theme.spacing(3),
@@ -109,11 +108,18 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.down('md')]: {
 			'&.MuiTypography-root': {
-				marginTop: theme.spacing(10),
 				width: '100%',
 				marginLeft: 0,
-				padding: theme.spacing(0, 5),
+				marginTop: theme.spacing(25),
+				padding: theme.spacing(0, 8),
 				lineHeight: '20px'
+			}
+		},
+
+		[theme.breakpoints.down('sm')]: {
+			'&.MuiTypography-root': {
+				marginTop: theme.spacing(18),
+				padding: theme.spacing(0, 4)
 			}
 		}
 	},
@@ -145,10 +151,12 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: '45vh',
+		marginTop: '15vw',
+		flexWrap: 'wrap',
+		padding: theme.spacing(5),
 
 		[theme.breakpoints.down('sm')]: {
-			flexDirection: 'column'
+			justifyContent: 'flex-start'
 		}
 	},
 	feature: {
@@ -156,10 +164,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginRight: theme.spacing(4),
-
-		[theme.breakpoints.down('sm')]: {
-			// justifyContent: 'end'
-		}
+		marginBottom: theme.spacing(3)
 	},
 	featuresTxt1: {
 		'&.MuiTypography-root': {
