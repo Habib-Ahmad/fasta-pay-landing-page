@@ -1,19 +1,20 @@
 import { Box } from '@mui/system'
 import { Typography, Button } from '@mui/material'
 import useStyles from './useStyles'
-import keke from '../../assets/svg/keke.svg'
-import smallKeke from '../../assets/svg/smallKeke.svg'
-import man from '../../assets/svg/man.svg'
-import f from '../../assets/svg/f.svg'
-import leftBlob from '../../assets/svg/leftBlob.svg'
-import rightBlob from '../../assets/svg/rightBlob.svg'
-import leftCircle from '../../assets/svg/leftCircle.svg'
-import bookRides from '../../assets/svg/bookRides.svg'
-import sendDeliveries from '../../assets/svg/sendDeliveries.svg'
-import earnFreePoints from '../../assets/svg/earnFreePoints.svg'
+import keke from '../../assets/svg/header/keke.svg'
+import smallKeke from '../../assets/svg/header/smallKeke.svg'
+import man from '../../assets/svg/header/man.svg'
+import f from '../../assets/svg/header/f.svg'
+import leftBlob from '../../assets/svg/header/leftBlob.svg'
+import rightBlob from '../../assets/svg/header/rightBlob.svg'
+import leftCircle from '../../assets/svg/header/leftCircle.svg'
+import bookRides from '../../assets/svg/header/bookRides.svg'
+import sendDeliveries from '../../assets/svg/header/sendDeliveries.svg'
+import earnFreePoints from '../../assets/svg/header/earnFreePoints.svg'
 
 const Header = () => {
 	const classes = useStyles()
+
 	return (
 		<Box className={classes.header}>
 			<Box sx={{ display: 'flex' }}>

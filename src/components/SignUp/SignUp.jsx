@@ -11,7 +11,7 @@ const SignUp = () => {
 			<img src={largeCircle} alt='' className={classes.largeCircle} />
 			<img src={smallCircle} alt='' className={classes.smallCircle} />
 			<Grid item sx={12} sm={8} lg={7} className={classes.textWrapper}>
-				<Typography variant='h2' sx={{ marginBottom: 1 }}>
+				<Typography variant='h3' sx={{ marginBottom: 1 }}>
 					Earn extra money as a fasta boss
 				</Typography>
 				<Typography className={classes.txt2}>
