@@ -36,5 +36,5 @@ jobs:
           username: ${{ secrets.WHOGOHOSTFTPUSERNAME }}
           password: ${{ secrets.WHOGOHOSTFTPPASSWORD }}
           local-dir: ./build/
-          server-dir: /oatleaf/
+          server-dir: /
           dangerous-clean-slate: true
