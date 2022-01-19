@@ -13,7 +13,11 @@ const Footer = () => {
 	return (
 		<Grid container alignItems='center' className={classes.footer}>
 			<Grid item xs={12} sm={6} display='flex' justifyContent='center'>
-				<img src={logo} alt='fasta' style={{ width: '25vw' }} />
+				<img
+					src={logo}
+					alt='fasta'
+					style={{ width: 'clamp(150px, 40vw, 400px)' }}
+				/>
 			</Grid>
 
 			<Grid item xs={12} sm={6} className={classes.info}>
@@ -35,35 +39,41 @@ const Footer = () => {
 				>
 					Phone: +2347048429177
 				</Typography>
-				<Box>
+				<Box sx={{ marginBottom: 2 }}>
 					<IconButton>
 						<img
 							src={facebook}
 							alt='facebook'
-							style={{ width: 'clamp(60px, 8vw, 200px)' }}
+							style={{ width: 'clamp(60px, 10vw, 100px)' }}
 						/>
 					</IconButton>
-					<IconButton>
+					<IconButton href='https://instagram.com/fastaride' target='_blank'>
 						<img
 							src={instagram}
 							alt='instagram'
-							style={{ width: 'clamp(60px, 8vw, 200px)' }}
+							style={{ width: 'clamp(60px, 10vw, 100px)' }}
 						/>
 					</IconButton>
-					<IconButton>
+					<IconButton href='https://twitter.com/fastaride' target='_blank'>
 						<img
 							src={twitter}
 							alt='twitter'
-							style={{ width: 'clamp(60px, 8vw, 200px)' }}
+							style={{ width: 'clamp(60px, 10vw, 100px)' }}
 						/>
 					</IconButton>
 					<IconButton>
 						<img
 							src={linkedin}
 							alt='linkedin'
-							style={{ width: 'clamp(60px, 8vw, 200px)' }}
+							style={{ width: 'clamp(60px, 10vw, 100px)' }}
 						/>
 					</IconButton>
+				</Box>
+
+				<Box className={classes.copyright}>
+					<Typography>
+						Copyright ® 2021 fasta inc. All rights Reserved
+					</Typography>
 				</Box>
 			</Grid>
 		</Grid>

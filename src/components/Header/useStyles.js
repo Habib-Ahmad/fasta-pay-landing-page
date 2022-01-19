@@ -5,6 +5,25 @@ const useStyles = makeStyles((theme) => ({
 		position: 'relative',
 		minHeight: '100vh'
 	},
+	modal: {
+		position: 'absolute',
+		top: '50%',
+		left: '50%',
+		transform: 'translate(-50%, -50%)',
+		minWidth: 280,
+		minHeight: 500,
+		backgroundColor: '#fff',
+		boxShadow: '0 0 10px rgba(0,0,0,0.5)',
+		borderRadius: '20px',
+		padding: theme.spacing(3, 8),
+
+		[theme.breakpoints.down('sm')]: {
+			padding: theme.spacing(4)
+		}
+	},
+	input: {
+		marginBottom: theme.spacing(3)
+	},
 	keke: {
 		width: '23vw',
 		position: 'absolute',
@@ -22,9 +41,9 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down('sm')]: {
 			display: 'flex',
 			position: 'absolute',
-			top: 'clamp(10px, 6vh, 100px)',
 			zIndex: -100,
-			width: '28vw'
+			width: '35vw',
+			top: '30px'
 		}
 	},
 	f: {
@@ -35,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
 		width: '25vw'
 	},
 	man: {
-		width: '35vw',
+		width: '50vw',
 		position: 'absolute',
-		top: 'clamp(80px, 6vh, 250px)',
-		right: '3vw',
+		top: 'clamp(60px, 6vh, 250px)',
+		right: 0,
 		zIndex: -100
 	},
 	leftBlob: {
@@ -54,8 +73,8 @@ const useStyles = makeStyles((theme) => ({
 	rightBlob: {
 		position: 'absolute',
 		right: 0,
-		top: 'clamp(80px, 6vh, 250px)',
-		width: '3vw'
+		top: 'clamp(60px, 6vh, 250px)',
+		width: '6vw'
 	},
 	leftCircle: {
 		position: 'absolute',
@@ -81,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
 				textAlign: 'center',
 				marginLeft: 'auto',
 				marginRight: 'auto',
-				width: '60%',
+				width: '50%',
 				lineHeight: '20px'
 			}
 		}
@@ -110,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
 			'&.MuiTypography-root': {
 				width: '100%',
 				marginLeft: 0,
-				marginTop: theme.spacing(25),
+				marginTop: theme.spacing(35),
 				padding: theme.spacing(0, 8),
 				lineHeight: '20px'
 			}
@@ -118,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.down('sm')]: {
 			'&.MuiTypography-root': {
-				marginTop: theme.spacing(18),
+				marginTop: theme.spacing(25),
 				padding: theme.spacing(0, 4)
 			}
 		}
@@ -151,7 +170,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: '15vw',
+		marginTop: '18vw',
 		flexWrap: 'wrap',
 		padding: theme.spacing(5),
 

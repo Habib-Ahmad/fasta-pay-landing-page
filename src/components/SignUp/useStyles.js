@@ -64,6 +64,10 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: 16,
 			textTransform: 'uppercase',
 
+			'&:hover': {
+				color: '#fff'
+			},
+
 			[theme.breakpoints.down('lg')]: {
 				width: '200px'
 			}

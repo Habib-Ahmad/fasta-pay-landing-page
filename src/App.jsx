@@ -7,17 +7,20 @@ import Footer from './components/Footer/Footer'
 import { BrowserRouter } from 'react-router-dom'
 import { theme } from './themes/theme'
 import { ThemeProvider } from '@mui/material/styles'
+import { Box } from '@mui/material'
 
 const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
-				<NavBar />
-				<Header />
-				<SignUp />
-				<Services />
-				<ComingSoon />
-				<Footer />
+				<Box sx={{ overflowX: 'hidden' }}>
+					<NavBar />
+					<Header />
+					<SignUp />
+					<Services />
+					<ComingSoon />
+					<Footer />
+				</Box>
 			</BrowserRouter>
 		</ThemeProvider>
 	)

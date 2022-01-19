@@ -4,10 +4,6 @@ export const theme = createTheme({
 	typography: {
 		fontFamily: "'Poppins', 'sans-serif'",
 
-		allVariants: {
-			fontSize: 'clamp(1.875rem, 4vw, 1.125rem)'
-		},
-
 		h1: {
 			fontSize: 'clamp(.8rem, 3.5vw, 2.5rem)',
 			fontWeight: '600'
@@ -42,7 +38,9 @@ export const theme = createTheme({
 
 				contained: {
 					color: '#fff',
-					textTransform: 'none'
+					textTransform: 'none',
+					backgroundColor:
+						'linear-gradient(180deg, rgba(225,289,55,0.58) 0%, #ffbd37 100%)'
 				},
 
 				containedSizeMedium: {
@@ -59,7 +57,24 @@ export const theme = createTheme({
 			styleOverrides: {
 				root: {
 					backgroundColor: '#fff',
+					fontSize: 16,
+					padding: 0
+				}
+			}
+		},
+
+		MuiInputLabel: {
+			styleOverrides: {
+				root: {
 					fontSize: 16
+				}
+			}
+		},
+
+		MuiFormControlLabel: {
+			styleOverrides: {
+				root: {
+					fontSize: '.1rem'
 				}
 			}
 		}

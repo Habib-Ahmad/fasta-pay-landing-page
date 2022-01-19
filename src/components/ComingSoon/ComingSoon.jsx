@@ -1,8 +1,8 @@
 import { Button, IconButton, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import useStyles from './useStyles'
-// import largeFox from '../../assets/svg/largeFox.svg'
-// import smallFox from '../../assets/svg/smallFox.svg'
+import largeFox from '../../assets/svg/largeFox.svg'
+import smallFox from '../../assets/svg/smallFox.svg'
 import appStore from '../../assets/svg/appStore.svg'
 import playStore from '../../assets/svg/playStore.svg'
 
@@ -10,8 +10,9 @@ const ComingSoon = () => {
 	const classes = useStyles()
 	return (
 		<Box className={classes.comingSoon}>
-			{/* <img src={largeFox} alt='' /> */}
-			{/* <img src={smallFox} alt='' /> */}
+			<img src={largeFox} alt='' className={classes.largeFox} />
+			<img src={smallFox} alt='' className={classes.smallFox} />
+			<img src={smallFox} alt='' className={classes.smallFox2} />
 
 			<Typography className={classes.heading}>Coming Soon</Typography>
 

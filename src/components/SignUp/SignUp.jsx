@@ -10,7 +10,7 @@ const SignUp = () => {
 		<Grid container className={classes.signUp}>
 			<img src={largeCircle} alt='' className={classes.largeCircle} />
 			<img src={smallCircle} alt='' className={classes.smallCircle} />
-			<Grid item sx={12} sm={8} lg={7} className={classes.textWrapper}>
+			<Grid item xs={12} sm={8} lg={7} className={classes.textWrapper}>
 				<Typography variant='h3' sx={{ marginBottom: 1 }}>
 					Earn extra money as a fasta boss
 				</Typography>
@@ -18,7 +18,7 @@ const SignUp = () => {
 					Set your own schedule, become a Fasta boss
 				</Typography>
 			</Grid>
-			<Grid item sx={12} sm={4} lg={5} className={classes.btnWrapper}>
+			<Grid item xs={12} sm={4} lg={5} className={classes.btnWrapper}>
 				<Button variant='contained' className={classes.btn}>
 					Sign up to ride
 				</Button>

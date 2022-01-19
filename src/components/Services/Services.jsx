@@ -1,20 +1,27 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system'
 import useStyles from './useStyles'
 import bookRides from '../../assets/svg/services/bookRides.svg'
 import sendDeliveries from '../../assets/svg/services/sendDeliveries.svg'
 import earnPoints from '../../assets/svg/services/earnPoints.svg'
-import iPhone from '../../assets/svg/services/iPhone.svg'
-import iPhoneWithHand from '../../assets/svg/services/iPhoneWithHand.svg'
+import iPhone from '../../assets/svg/services/iPhoneDesktop.png'
+import iPhoneMobile from '../../assets/svg/services/iPhoneMobile.png'
+import iPhoneWithHand from '../../assets/svg/services/iPhoneWithHandDesktop.png'
+import iPhoneWithHandMobile from '../../assets/svg/services/iPhoneWithHandMobile.png'
 import money from '../../assets/svg/services/money.svg'
 import circle from '../../assets/svg/services/circle.svg'
 import circle2 from '../../assets/svg/services/circle2.svg'
+import circle3 from '../../assets/svg/services/circle3.svg'
+import abstract from '../../assets/svg/services/abstract.svg'
 
 const Services = () => {
 	const classes = useStyles()
 
+	const isDesktop = useMediaQuery('(min-width: 600px)')
+
 	return (
 		<Box className={classes.services}>
+			<img src={abstract} alt='Abstract art' className={classes.abstract} />
 			<Typography variant='h2'>Our Services</Typography>
 			<Typography className={classes.text}>
 				We provide a convinience, safe and secure keke rides. with the aid of
@@ -51,11 +58,7 @@ const Services = () => {
 				</Grid>
 
 				<Grid item xs={12} sm={6} className={classes.svg}>
-					<img
-						src={iPhone}
-						alt='iPhone'
-						style={{ width: 'clamp(150px, 23vw, 300px)' }}
-					/>
+					<img src={isDesktop ? iPhone : iPhoneMobile} alt='iPhone' />
 				</Grid>
 				<img src={circle} alt='circle' className={classes.circle} />
 				<img src={circle2} alt='circle2' className={classes.circle2} />
@@ -69,9 +72,8 @@ const Services = () => {
 			>
 				<Grid item xs={12} sm={6} className={classes.svg}>
 					<img
-						src={iPhoneWithHand}
+						src={isDesktop ? iPhoneWithHand : iPhoneWithHandMobile}
 						alt='iPhone with hand'
-						style={{ width: 'clamp(250px, 33vw, 450px)' }}
 					/>
 				</Grid>
 
@@ -96,6 +98,7 @@ const Services = () => {
 						meet our boss and get your package delivered in no time
 					</Typography>
 				</Grid>
+				<img src={circle3} alt='' className={classes.circle3} />
 			</Grid>
 
 			<Grid container sx={{ display: 'flex', alignItems: 'center' }}>
@@ -126,7 +129,7 @@ const Services = () => {
 					<img
 						src={money}
 						alt='Money'
-						style={{ width: 'clamp(200px, 40vw, 450px)' }}
+						style={{ width: 'clamp(300px, 40vw, 450px)' }}
 					/>
 				</Grid>
 			</Grid>

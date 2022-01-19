@@ -4,7 +4,8 @@ const useStyles = makeStyles((theme) => ({
 	services: {
 		padding: '10vw 5vw',
 		display: 'grid',
-		placeItems: 'center'
+		placeItems: 'center',
+		position: 'relative'
 	},
 	text: {
 		'&.MuiTypography-root': {
@@ -85,6 +86,19 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: '-5vw',
 			zIndex: -100
 		}
+	},
+	circle3: {
+		position: 'absolute',
+		left: 0,
+		zIndex: -100
+	},
+	abstract: {
+		position: 'absolute',
+		opacity: 0.05,
+		top: '20vw',
+		width: 'clamp(200px, 40vw, 650px)',
+		left: '15vw',
+		zIndex: -200
 	}
 }))
 
