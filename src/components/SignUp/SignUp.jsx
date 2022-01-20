@@ -1,13 +1,13 @@
 import { Button, Grid, Typography } from '@mui/material'
 import useStyles from './useStyles'
-import largeCircle from '../../assets/svg/largeCircle.svg'
-import smallCircle from '../../assets/svg/smallCircle.svg'
+import largeCircle from '../../assets/signUp/largeCircle.svg'
+import smallCircle from '../../assets/signUp/smallCircle.svg'
 
 const SignUp = () => {
 	const classes = useStyles()
 
 	return (
-		<Grid container className={classes.signUp}>
+		<Grid id='signUp' container className={classes.signUp}>
 			<img src={largeCircle} alt='' className={classes.largeCircle} />
 			<img src={smallCircle} alt='' className={classes.smallCircle} />
 			<Grid item xs={12} sm={8} lg={7} className={classes.textWrapper}>

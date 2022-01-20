@@ -5,14 +5,11 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: theme.palette.primary.main,
 		width: '100%',
 		height: '243px',
-		display: 'flex',
-		justifyContent: 'space-between',
-		alignItems: 'center',
 		color: '#fff',
 		position: 'relative',
+		padding: '0 5vw',
 
 		[theme.breakpoints.down('sm')]: {
-			flexDirection: 'column',
 			height: '189px'
 		}
 	},
@@ -41,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	txt2: {
 		'&.MuiTypography-root': {
-			fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+			fontSize: 'clamp(0.8rem, 2vw, 1rem)',
 			marginLeft: theme.spacing(-25),
 
 			[theme.breakpoints.down('md')]: {

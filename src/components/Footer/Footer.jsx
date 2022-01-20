@@ -1,18 +1,25 @@
 import { Box } from '@mui/system'
 import useStyles from './useStyles'
 import { Grid, IconButton, Typography } from '@mui/material'
-import logo from '../../assets/svg/logo.svg'
-import facebook from '../../assets/svg/footer/facebook.svg'
-import instagram from '../../assets/svg/footer/instagram.svg'
-import twitter from '../../assets/svg/footer/twitter.svg'
-import linkedin from '../../assets/svg/footer/linkedin.svg'
+import logo from '../../assets/logo.svg'
+import facebook from '../../assets/footer/facebook.svg'
+import instagram from '../../assets/footer/instagram.svg'
+import twitter from '../../assets/footer/twitter.svg'
+import linkedin from '../../assets/footer/linkedin.svg'
 
 const Footer = () => {
 	const classes = useStyles()
 
 	return (
 		<Grid container alignItems='center' className={classes.footer}>
-			<Grid item xs={12} sm={6} display='flex' justifyContent='center'>
+			<Grid
+				item
+				xs={12}
+				sm={6}
+				mb={{ xs: 5, sm: 0 }}
+				display='flex'
+				justifyContent='center'
+			>
 				<img
 					src={logo}
 					alt='fasta'

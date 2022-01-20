@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	heading: {
 		'&.MuiTypography-root': {
-			// fontSize: '4.5rem',
 			fontSize: 'clamp(3rem, 6vw, 4.5rem)',
 			fontWeight: 600,
 			textAlign: 'center',
@@ -31,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down('sm')]: {
 			flexDirection: 'column'
 		}
-	},
-	downloadBtn: {
-		width: 'clamp(200px, 23vw, 300px)'
 	},
 	txt: {
 		width: '45%',
@@ -111,6 +107,25 @@ const useStyles = makeStyles((theme) => ({
 			left: '5vw',
 			width: '45vw'
 		}
+	},
+	modal: {
+		position: 'absolute',
+		top: '50%',
+		left: '50%',
+		transform: 'translate(-50%, -50%)',
+		minWidth: 280,
+		minHeight: 500,
+		backgroundColor: '#fff',
+		boxShadow: '0 0 10px rgba(0,0,0,0.5)',
+		borderRadius: '20px',
+		padding: theme.spacing(3, 8),
+
+		[theme.breakpoints.down('sm')]: {
+			padding: theme.spacing(4)
+		}
+	},
+	input2: {
+		marginBottom: theme.spacing(3)
 	}
 }))
 

@@ -41,6 +41,14 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		alignItems: 'center'
 	},
+	featureImg: {
+		minWidth: 120,
+		height: 120,
+		display: 'grid',
+		placeItems: 'center',
+		borderRadius: '50%',
+		marginRight: '15px'
+	},
 	featureTxt1: {
 		'&.MuiTypography-root': {
 			fontSize: '17px',
@@ -82,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down('sm')]: {
 			display: 'flex',
 			position: 'absolute',
+			top: 120,
 			left: 0,
 			marginLeft: '-5vw',
 			zIndex: -100

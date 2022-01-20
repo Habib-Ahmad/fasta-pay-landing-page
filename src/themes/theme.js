@@ -4,18 +4,13 @@ export const theme = createTheme({
 	typography: {
 		fontFamily: "'Poppins', 'sans-serif'",
 
-		h1: {
-			fontSize: 'clamp(.8rem, 3.5vw, 2.5rem)',
-			fontWeight: '600'
-		},
-
 		h2: {
 			fontSize: 'clamp(1.5rem, 3.5vw, 2rem)',
 			fontWeight: '600'
 		},
 
 		h3: {
-			fontSize: 'clamp(1.25rem, 3.5vw, 2rem)',
+			fontSize: 'clamp(1rem, 3.5vw, 2rem)',
 			fontWeight: '500'
 		}
 	},

@@ -22,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
 		}
 	},
 	text1: {
+		fontSize: '1.5rem',
+
 		[theme.breakpoints.up('sm')]: {
 			'&.MuiTypography-root': {
 				marginLeft: '6vw'

@@ -1,18 +1,18 @@
 import { Grid, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system'
 import useStyles from './useStyles'
-import bookRides from '../../assets/svg/services/bookRides.svg'
-import sendDeliveries from '../../assets/svg/services/sendDeliveries.svg'
-import earnPoints from '../../assets/svg/services/earnPoints.svg'
-import iPhone from '../../assets/svg/services/iPhoneDesktop.png'
-import iPhoneMobile from '../../assets/svg/services/iPhoneMobile.png'
-import iPhoneWithHand from '../../assets/svg/services/iPhoneWithHandDesktop.png'
-import iPhoneWithHandMobile from '../../assets/svg/services/iPhoneWithHandMobile.png'
-import money from '../../assets/svg/services/money.svg'
-import circle from '../../assets/svg/services/circle.svg'
-import circle2 from '../../assets/svg/services/circle2.svg'
-import circle3 from '../../assets/svg/services/circle3.svg'
-import abstract from '../../assets/svg/services/abstract.svg'
+import bookRides from '../../assets/bookRides.png'
+import sendDeliveries from '../../assets/sendDeliveries.png'
+import earnPoints from '../../assets/earnPoints.svg'
+import iPhone from '../../assets/services/iPhoneDesktop.png'
+import iPhoneMobile from '../../assets/services/iPhoneMobile.png'
+import iPhoneWithHand from '../../assets/services/iPhoneWithHandDesktop.png'
+import iPhoneWithHandMobile from '../../assets/services/iPhoneWithHandMobile.png'
+import money from '../../assets/services/money.svg'
+import circle from '../../assets/services/circle.svg'
+import circle2 from '../../assets/services/circle2.svg'
+import circle3 from '../../assets/services/circle3.svg'
+import abstract from '../../assets/services/abstract.svg'
 
 const Services = () => {
 	const classes = useStyles()
@@ -20,12 +20,12 @@ const Services = () => {
 	const isDesktop = useMediaQuery('(min-width: 600px)')
 
 	return (
-		<Box className={classes.services}>
+		<Box id='services' className={classes.services}>
 			<img src={abstract} alt='Abstract art' className={classes.abstract} />
 			<Typography variant='h2'>Our Services</Typography>
 			<Typography className={classes.text}>
-				We provide a convinience, safe and secure keke rides. with the aid of
-				our registered, civilized and advance fasta{' '}
+				We provide convenient, safe and secure keke rides. With the aid of our
+				registered, civilized and advanced fasta{' '}
 				<span style={{ color: '#00AEE8' }}>
 					<span style={{ fontWeight: 700 }}>bosses</span> (riders)
 				</span>
@@ -33,15 +33,19 @@ const Services = () => {
 				<span style={{ color: '#00AEE8' }}>
 					<span style={{ fontWeight: 700 }}> guests</span> (passengers)
 				</span>
-				. And you also earn points for every trip that you take, which you can
-				use to book for another trip or donate to any charity foundattion of
-				your choice.
+				. Earn points for every trip that you take, which you can use to book
+				for other trips or donate to any charity foundation of your choice.
 			</Typography>
 
 			<Grid container sx={{ position: 'relative' }}>
 				<Grid item xs={12} sm={6}>
 					<Box className={classes.feature}>
-						<img src={bookRides} alt='Book rides' style={{ marginRight: 15 }} />
+						<Box
+							className={classes.featureImg}
+							sx={{ backgroundColor: '#1493C917' }}
+						>
+							<img src={bookRides} alt='Book rides' />
+						</Box>
 						<Box>
 							<Typography className={classes.featureTxt1}>
 								Book rides
@@ -57,7 +61,7 @@ const Services = () => {
 					</Typography>
 				</Grid>
 
-				<Grid item xs={12} sm={6} className={classes.svg}>
+				<Grid item xs={12} sm={6} className={classes.svg} sx={{ marginTop: 2 }}>
 					<img src={isDesktop ? iPhone : iPhoneMobile} alt='iPhone' />
 				</Grid>
 				<img src={circle} alt='circle' className={classes.circle} />
@@ -67,7 +71,7 @@ const Services = () => {
 			<Grid
 				container
 				sx={{ display: 'flex', alignItems: 'center' }}
-				mt={{ sm: -5, md: -10 }}
+				mt={{ xs: 5, md: -10 }}
 				className={classes.wrapReverse}
 			>
 				<Grid item xs={12} sm={6} className={classes.svg}>
@@ -79,11 +83,12 @@ const Services = () => {
 
 				<Grid item xs={12} sm={6}>
 					<Box className={classes.feature}>
-						<img
-							src={sendDeliveries}
-							alt='Send Deliveries'
-							style={{ marginRight: 15 }}
-						/>
+						<Box
+							style={{ backgroundColor: '#eaf5fa', marginRight: 15 }}
+							className={classes.featureImg}
+						>
+							<img src={sendDeliveries} alt='Send Deliveries' />
+						</Box>
 						<Box>
 							<Typography className={classes.featureTxt1}>
 								Send Deliverires

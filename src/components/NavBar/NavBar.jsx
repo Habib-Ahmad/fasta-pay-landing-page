@@ -8,8 +8,8 @@ import {
 	Typography
 } from '@mui/material'
 import useStyles from './useStyles'
-import menuIcon from '../../assets/svg/menu.svg'
-import logo from '../../assets/svg/logo.svg'
+import menuIcon from '../../assets/menu.svg'
+import logo from '../../assets/logo.svg'
 
 const NavBar = () => {
 	const [displayDrawer, setDisplayDrawer] = useState(false)
@@ -28,23 +28,23 @@ const NavBar = () => {
 	}
 
 	return (
-		<Grid container className={classes.navBar}>
+		<Grid id='home' container className={classes.navBar}>
 			<Grid item xs={10} sm={2} md={2.5} className={classes.logoWrapper}>
 				<img src={logo} alt='fasta' className={classes.logo} />
 			</Grid>
 
 			<Grid item md={5} lg={4} className={classes.navBtnWrapper}>
-				<Button className={classes.navBtn} disableRipple>
+				<Button className={classes.navBtn} href='#home' disableRipple>
 					<Typography
 						sx={{ fontWeight: 700, color: '#00AEE8', fontSize: '1rem' }}
 					>
 						Home
 					</Typography>
 				</Button>
-				<Button className={classes.navBtn} disableRipple>
+				<Button className={classes.navBtn} href='#signUp' disableRipple>
 					Become a boss
 				</Button>
-				<Button className={classes.navBtn} disableRipple>
+				<Button className={classes.navBtn} href='#services' disableRipple>
 					Services
 				</Button>
 			</Grid>
@@ -66,13 +66,28 @@ const NavBar = () => {
 					onOpen={toggleDrawer(true)}
 				>
 					<Box className={classes.menuItems}>
-						<Button className={classes.navBtn} disableRipple>
+						<Button
+							onClick={toggleDrawer(false)}
+							className={classes.navBtn}
+							href='#home'
+							disableRipple
+						>
 							Home
 						</Button>
-						<Button className={classes.navBtn} disableRipple>
+						<Button
+							onClick={toggleDrawer(false)}
+							className={classes.navBtn}
+							href='#signUp'
+							disableRipple
+						>
 							Become a boss
 						</Button>
-						<Button className={classes.navBtn} disableRipple>
+						<Button
+							onClick={toggleDrawer(false)}
+							className={classes.navBtn}
+							href='#services'
+							disableRipple
+						>
 							Services
 						</Button>
 						<Button variant='contained'>Contact us</Button>
