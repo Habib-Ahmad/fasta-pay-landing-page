@@ -32,12 +32,15 @@ const ComingSoon = () => {
 
 	const handleSubmit = async ({ firstName, lastName, email, phone, as }) => {
 		const asNumber = parseInt(as)
-		await axios
-			.post('/user/campaign', { firstName, lastName, email, phone, asNumber })
-			.then((res) => {
-				console.log(res)
-				notify()
-			})
+		await axios.post('/user/campaign', {
+			firstName,
+			lastName,
+			email,
+			phone,
+			asNumber
+		})
+		notify()
+		handleClose()
 	}
 
 	const notify = () => toast.success('You have successfuly subscribed')
@@ -74,15 +77,20 @@ const ComingSoon = () => {
 			</Typography>
 
 			<Box className={classes.inputWrapper}>
-				<TextField
+				{/* <TextField
 					variant='outlined'
 					placeholder='Enter your email'
 					fullWidth
 					className={classes.input}
-				/>
+				/> */}
 				<Button
 					variant='contained'
-					sx={{ backgroundColor: '#004266', height: '54px', width: '173px' }}
+					sx={{
+						backgroundColor: '#004266',
+						height: '54px',
+						width: '173px',
+						margin: '0 auto'
+					}}
 					onClick={handleOpen}
 				>
 					Subscribe
@@ -113,8 +121,7 @@ const ComingSoon = () => {
 								.required('E-mail Name is required')
 								.email('E-mail is not valid'),
 							phone: Yup.string().required('Phone Number is required'),
-							as: Yup.number().required('Please pick an option'),
-							password: Yup.string()
+							as: Yup.number().required().oneOf([1, 2], 'Please pick an option')
 						})}
 						onSubmit={handleSubmit}
 					>
@@ -179,7 +186,9 @@ const ComingSoon = () => {
 									<RadioGroup
 										name='as'
 										sx={{ display: 'flex', flexDirection: 'row' }}
-										value={values.as.toString()}
+										helperText={touched.as ? errors.as : ''}
+										error={touched.as && Boolean(errors.as)}
+										value={values.as}
 										onChange={handleChange}
 									>
 										<FormControlLabel
@@ -196,7 +205,15 @@ const ComingSoon = () => {
 											label='Guest (Passesnger)'
 										/>
 									</RadioGroup>
-									<span style={{ color: 'red' }}>{errors.as}</span>
+									<Typography
+										style={{
+											color: '#d32f2f',
+											fontSize: 12,
+											marginLeft: '16px'
+										}}
+									>
+										{errors.as}
+									</Typography>
 								</Box>
 
 								<Button

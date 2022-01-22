@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
-		minWidth: 280,
+		minWidth: 320,
 		minHeight: 500,
 		backgroundColor: '#fff',
 		boxShadow: '0 0 10px rgba(0,0,0,0.5)',
@@ -121,7 +121,8 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(3, 8),
 
 		[theme.breakpoints.down('sm')]: {
-			padding: theme.spacing(4)
+			padding: theme.spacing(4),
+			width: '90%'
 		}
 	},
 	input2: {
