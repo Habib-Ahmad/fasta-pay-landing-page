@@ -2,16 +2,16 @@ import { Box } from '@mui/system'
 import { Typography, Button } from '@mui/material'
 import useStyles from './useStyles'
 import keke from '../../assets/header/keke.svg'
-import smallKeke from '../../assets/header/smallKeke.png'
+import smallKeke from '../../assets/header/smallKeke.svg'
 import man from '../../assets/header/man.svg'
-import smallMan from '../../assets/header/smallMan.png'
+import smallMan from '../../assets/header/smallMan.svg'
 import f from '../../assets/header/f.svg'
 import leftBlob from '../../assets/header/leftBlob.svg'
 import rightBlob from '../../assets/header/rightBlob.svg'
 import leftCircle from '../../assets/header/leftCircle.svg'
 import bookRides from '../../assets/bookRides.png'
 import sendDeliveries from '../../assets/sendDeliveries.png'
-import earnPoints from '../../assets/earnPoints.svg'
+import earnPoints from '../../assets/header/earnPoints.svg'
 
 const Header = () => {
 	const classes = useStyles()
@@ -71,7 +71,7 @@ const Header = () => {
 							backgroundColor: '#efeaff'
 						}}
 					>
-						<img src={bookRides} alt='Book rides' />
+						<img src={bookRides} alt='Book rides' style={{ width: 60 }} />
 					</Box>
 					<Box>
 						<Typography className={classes.featuresTxt1}>Book Rides</Typography>
@@ -88,7 +88,11 @@ const Header = () => {
 							backgroundColor: '#ecffda'
 						}}
 					>
-						<img src={sendDeliveries} alt='Send deliveries' />
+						<img
+							src={sendDeliveries}
+							alt='Send deliveries'
+							style={{ width: 60 }}
+						/>
 					</Box>
 					<Box>
 						<Typography className={classes.featuresTxt1}>

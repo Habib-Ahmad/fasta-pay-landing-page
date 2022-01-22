@@ -37,14 +37,14 @@ const Services = () => {
 				for other trips or donate to any charity foundation of your choice.
 			</Typography>
 
-			<Grid container sx={{ position: 'relative' }}>
+			<Grid mt={{ xs: 10, sm: 0 }} container sx={{ position: 'relative' }}>
 				<Grid item xs={12} sm={6}>
 					<Box className={classes.feature}>
 						<Box
 							className={classes.featureImg}
 							sx={{ backgroundColor: '#1493C917' }}
 						>
-							<img src={bookRides} alt='Book rides' />
+							<img src={bookRides} alt='Book rides' style={{ width: 60 }} />
 						</Box>
 						<Box>
 							<Typography className={classes.featureTxt1}>
@@ -61,8 +61,19 @@ const Services = () => {
 					</Typography>
 				</Grid>
 
-				<Grid item xs={12} sm={6} className={classes.svg} sx={{ marginTop: 2 }}>
-					<img src={isDesktop ? iPhone : iPhoneMobile} alt='iPhone' />
+				<Grid
+					mt={{ xs: 5, sm: 0 }}
+					item
+					xs={12}
+					sm={6}
+					className={classes.svg}
+					sx={{ marginTop: 2 }}
+				>
+					<img
+						src={isDesktop ? iPhone : iPhoneMobile}
+						alt='iPhone'
+						style={isDesktop ? null : { width: 300 }}
+					/>
 				</Grid>
 				<img src={circle} alt='circle' className={classes.circle} />
 				<img src={circle2} alt='circle2' className={classes.circle2} />
@@ -71,13 +82,14 @@ const Services = () => {
 			<Grid
 				container
 				sx={{ display: 'flex', alignItems: 'center' }}
-				mt={{ xs: 5, md: -10 }}
+				mt={{ xs: 10, md: -10 }}
 				className={classes.wrapReverse}
 			>
 				<Grid item xs={12} sm={6} className={classes.svg}>
 					<img
 						src={isDesktop ? iPhoneWithHand : iPhoneWithHandMobile}
 						alt='iPhone with hand'
+						style={isDesktop ? null : { width: 350 }}
 					/>
 				</Grid>
 
@@ -87,7 +99,11 @@ const Services = () => {
 							style={{ backgroundColor: '#eaf5fa', marginRight: 15 }}
 							className={classes.featureImg}
 						>
-							<img src={sendDeliveries} alt='Send Deliveries' />
+							<img
+								src={sendDeliveries}
+								alt='Send Deliveries'
+								style={{ width: 60 }}
+							/>
 						</Box>
 						<Box>
 							<Typography className={classes.featureTxt1}>
@@ -112,7 +128,7 @@ const Services = () => {
 						<img
 							src={earnPoints}
 							alt='Earn points'
-							style={{ marginRight: 15 }}
+							style={{ marginRight: 15, width: 83 }}
 						/>
 						<Box>
 							<Typography className={classes.featureTxt1}>

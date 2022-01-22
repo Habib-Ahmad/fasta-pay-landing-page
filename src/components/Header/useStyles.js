@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 			display: 'flex',
 			position: 'absolute',
 			zIndex: -100,
-			top: 450
+			top: 235
 		}
 	},
 	f: {
@@ -140,7 +140,8 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: '30vw',
 			marginTop: theme.spacing(3),
 			color: '#5c5c5c',
-			lineHeight: '32px'
+			lineHeight: '32px',
+			textAlign: 'center'
 		},
 
 		[theme.breakpoints.down('md')]: {
@@ -149,13 +150,13 @@ const useStyles = makeStyles((theme) => ({
 				marginLeft: 0,
 				marginTop: theme.spacing(15),
 				padding: theme.spacing(0, 8),
-				lineHeight: '20px'
+				lineHeight: '25px'
 			}
 		},
 
 		[theme.breakpoints.down('sm')]: {
 			'&.MuiTypography-root': {
-				marginTop: theme.spacing(75),
+				marginTop: theme.spacing(40),
 				padding: theme.spacing(0, 4)
 			}
 		}

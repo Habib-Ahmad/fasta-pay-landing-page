@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	text: {
 		'&.MuiTypography-root': {
-			fontSize: 'clamp(14px, 2vw, 18px)',
+			fontSize: 'clamp(1rem, 2vw, 18px)',
 			width: '80%',
 			textAlign: 'center',
 			fontWeight: 300,
@@ -42,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center'
 	},
 	featureImg: {
-		minWidth: 120,
-		height: 120,
+		minWidth: 83,
+		height: 83,
 		display: 'grid',
 		placeItems: 'center',
 		borderRadius: '50%',

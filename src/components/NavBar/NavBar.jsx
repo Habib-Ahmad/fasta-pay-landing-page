@@ -50,7 +50,7 @@ const NavBar = () => {
 			</Grid>
 
 			<Grid item md={3} lg={2} className={classes.contactBtnWrapper}>
-				<Button variant='contained' size='medium'>
+				<Button variant='contained' href='#footer' size='medium'>
 					Contact us
 				</Button>
 			</Grid>
@@ -90,7 +90,13 @@ const NavBar = () => {
 						>
 							Services
 						</Button>
-						<Button variant='contained'>Contact us</Button>
+						<Button
+							variant='contained'
+							onClick={toggleDrawer(false)}
+							href='#footer'
+						>
+							Contact us
+						</Button>
 					</Box>
 				</SwipeableDrawer>
 			</Grid>
