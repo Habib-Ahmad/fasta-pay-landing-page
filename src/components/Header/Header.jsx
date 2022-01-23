@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react'
 import { Box } from '@mui/system'
 import { Typography, Button } from '@mui/material'
+import toast, { Toaster } from 'react-hot-toast'
 import useStyles from './useStyles'
 import keke from '../../assets/header/keke.svg'
 import smallKeke from '../../assets/header/smallKeke.svg'
@@ -12,12 +14,35 @@ import leftCircle from '../../assets/header/leftCircle.svg'
 import bookRides from '../../assets/bookRides.png'
 import sendDeliveries from '../../assets/sendDeliveries.png'
 import earnPoints from '../../assets/header/earnPoints.svg'
+import SignUpForm from '../SignUpForm/SignUpForm'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Header = () => {
 	const classes = useStyles()
+	const location = useLocation()
+	const nav = useNavigate()
+
+	useEffect(() => {
+		if (!location.search.includes('modalOpened=true')) {
+			setOpen(false)
+		}
+	}, [location])
+
+	const [open, setOpen] = useState(false)
+
+	const handleOpen = () => {
+		nav(location.pathname + '?modalOpened=true')
+		setOpen(true)
+	}
+
+	const handleClose = () => setOpen(false)
+
+	const notify = () => toast.success('You have successfuly subscribed')
 
 	return (
 		<Box className={classes.header}>
+			<Toaster position='top-right' />
+
 			<Box sx={{ display: 'flex' }}>
 				<img className={classes.keke} src={keke} alt='Keke' />
 				<img className={classes.smallKeke} src={smallKeke} alt='Small Keke' />
@@ -48,7 +73,7 @@ const Header = () => {
 					</Typography>
 
 					<Box className={classes.btnWrapper}>
-						<Button variant='contained' size='large'>
+						<Button onClick={handleOpen} variant='contained' size='large'>
 							Sign up
 						</Button>
 
@@ -62,6 +87,13 @@ const Header = () => {
 					</Box>
 				</Box>
 			</Box>
+
+			<SignUpForm
+				open={open}
+				setOpen={setOpen}
+				handleClose={handleClose}
+				notify={notify}
+			/>
 
 			<Box className={classes.features}>
 				<Box className={classes.feature}>

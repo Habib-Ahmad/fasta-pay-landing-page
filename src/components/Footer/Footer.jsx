@@ -38,13 +38,13 @@ const Footer = () => {
 					sx={{ fontSize: 16, fontWeight: 400 }}
 					className={classes.text2}
 				>
-					Email: fastaride@outlook.com
+					Email: info@fastaride.ng
 				</Typography>
 				<Typography
 					sx={{ fontSize: 16, fontWeight: 400 }}
 					className={classes.text2}
 				>
-					Phone: +2347048429177
+					Phone: +2347030674881
 				</Typography>
 				<Box sx={{ marginBottom: 2 }}>
 					<IconButton>
