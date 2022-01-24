@@ -20,8 +20,10 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 
 	const [error, setError] = useState('')
 	const [success, setSuccess] = useState('')
+	const [loading, setLoading] = useState(false)
 
 	const handleSubmit = async ({ firstName, lastName, email, phone, as }) => {
+		setLoading(true);
 		const asNumber = parseInt(as)
 		await axios
 			.post('/user/campaign', {
@@ -29,7 +31,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 				lastName,
 				email,
 				phone,
-				asNumber
+				as : asNumber
 			})
 			.then((res) => {
 				if (res.status === 200) {
@@ -41,6 +43,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 			.catch((error) => {
 				setError(error.response.data.message)
 			})
+		setLoading(true);
 	}
 
 	return (
@@ -170,7 +173,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 								size='large'
 								sx={{ display: 'block', margin: '10px auto', height: '60px' }}
 							>
-								{isSubmitting ? (
+								{loading ? (
 									<CircularProgress sx={{ width: '20px', color: 'white' }} />
 								) : (
 									'Submit'
