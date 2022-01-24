@@ -19,9 +19,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
   const classes = useStyles();
 
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState(
-    "You have been added to fastaRide campaign, have a nice day."
-  );
+  const [success, setSuccess] = useState();
 
   const handleSubmit = async ({ firstName, lastName, email, phone, as }) => {
     const asNumber = parseInt(as);
