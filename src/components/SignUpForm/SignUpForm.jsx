@@ -172,7 +172,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
                         name="as"
                         value={2}
                         control={<Radio />}
-                        label="Guest (Passesnger)"
+                        label="Guest (Passenger)"
                       />
                     </RadioGroup>
                     <Typography
