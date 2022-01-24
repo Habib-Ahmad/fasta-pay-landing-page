@@ -56,6 +56,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
               onClick={() => {
                 handleClose();
                 setSuccess();
+                setError("");
               }}
             >
               Thank you!
@@ -86,7 +87,8 @@ const SignUpForm = ({ open, handleClose, notify }) => {
                 firstName: Yup.string().required("First Name is required"),
                 lastName: Yup.string().required("Last Name is required"),
                 email: Yup.string()
-                  .required("E-mail Name is required")
+                  .trim()
+                  .required("E-mail is required")
                   .email("E-mail is not valid"),
                 phone: Yup.string().required("Phone Number is required"),
                 as: Yup.number()
