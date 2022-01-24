@@ -19,11 +19,11 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 	const classes = useStyles()
 
 	const [error, setError] = useState('')
-	const [success, setSuccess] = useState('')
-	const [loading, setLoading] = useState(false)
+	const [success, setSuccess] = useState()
+
 
 	const handleSubmit = async ({ firstName, lastName, email, phone, as }) => {
-		//setLoading(true);
+		
 		const asNumber = parseInt(as)
 		await axios
 			.post('/user/campaign', {
@@ -43,22 +43,32 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 			.catch((error) => {
 				setError(error.response.data.message)
 			})
-		//setLoading(true);
+		
 	}
 
 	return (
 		<Modal open={open} onClose={handleClose}>
-			<Box className={classes.modal}>
+		{success && (
+		 <div>
+					<Typography className={classes.successMsg}>{success}</Typography>
+<Button
+								variant='contained'
+								size='large'
+								sx={{ display: 'block', margin: '10px auto', height: '60px' }}
+								onClick={()=>{handleClose();}}
+							>
+								Close
+							</Button>
+</div>
+				)}
+				
+				{!success && (
+				<Box className={classes.modal}>
 				<Typography variant='h2' sx={{ textAlign: 'center', marginBottom: 5 }}>
 					Sign up
 				</Typography>
 
 				{error && <Typography className={classes.errorMsg}>{error}</Typography>}
-
-				{success && (
-					<Typography className={classes.successMsg}>{success}</Typography>
-				)}
-
 				<Formik
 					initialValues={{
 						firstName: '',
@@ -183,6 +193,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 					)}
 				</Formik>
 			</Box>
+				)}
 		</Modal>
 	)
 }
