@@ -16,7 +16,7 @@ const Footer = () => {
 				item
 				xs={12}
 				sm={6}
-				mb={{ xs: 5, sm: 0 }}
+				mb={{ xs: 8, sm: 0 }}
 				display='flex'
 				justifyContent='center'
 			>
@@ -29,22 +29,16 @@ const Footer = () => {
 
 			<Grid item xs={12} sm={6} className={classes.info}>
 				<Typography
-					sx={{ fontSize: 17, fontWeight: 500, marginBottom: 1 }}
+					sx={{ fontSize: 17, fontWeight: 500, marginBottom: 2 }}
 					className={classes.text1}
 				>
 					Contact us
 				</Typography>
 				<Typography
-					sx={{ fontSize: 16, fontWeight: 400 }}
+					sx={{ fontSize: 16, fontWeight: 400, marginBottom: 4 }}
 					className={classes.text2}
 				>
-					Email: info@fastaride.ng
-				</Typography>
-				<Typography
-					sx={{ fontSize: 16, fontWeight: 400 }}
-					className={classes.text2}
-				>
-					Phone: +2347030674881
+					<strong>Email:</strong> info@fastaride.ng
 				</Typography>
 				<Box sx={{ marginBottom: 2 }}>
 					<IconButton>
