@@ -37,7 +37,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
 				if (res.status === 200) {
 					setError('')
 					setSuccess(res.data.message)
-					setTimeout(() => setSuccess(''), 5000)
+					//setTimeout(() => setSuccess(''), 5000)
 				}
 			})
 			.catch((error) => {
