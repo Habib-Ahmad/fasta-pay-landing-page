@@ -8,59 +8,83 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import SignUpForm from '../SignUpForm/SignUpForm'
 
 const SignUp = () => {
-	const classes = useStyles()
-	const location = useLocation()
-	const nav = useNavigate()
+  const classes = useStyles()
+  const location = useLocation()
+  const nav = useNavigate()
 
-	useEffect(() => {
-		if (!location.search.includes('modalOpened=true')) {
-			setOpen(false)
-		}
-	}, [location])
+  useEffect(() => {
+    if (!location.search.includes('modalOpened=true')) {
+      setOpen(false)
+    }
+  }, [location])
 
-	const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
-	const handleOpen = () => {
-		nav(location.pathname + '?modalOpened=true')
-		setOpen(true)
-	}
+  const handleOpen = () => {
+    nav(location.pathname + '?modalOpened=true')
+    setOpen(true)
+  }
 
-	const handleClose = () => setOpen(false)
+  const handleClose = () => setOpen(false)
 
-	const notify = () => toast.success('You have successfuly subscribed')
+  const notify = () => toast.success('You have successfuly subscribed')
 
-	return (
-		<Grid id='signUp' container className={classes.signUp}>
-			<img src={largeCircle} alt='' className={classes.largeCircle} />
-			<img src={smallCircle} alt='' className={classes.smallCircle} />
-			<Grid item xs={12} sm={8} lg={7} className={classes.textWrapper}>
-				<Typography variant='h3' sx={{ marginBottom: 1 }}>
-					Earn extra money as a fasta boss
-				</Typography>
-				<Typography className={classes.txt2}>
-					Set your own schedule, become a Fasta boss
-				</Typography>
-			</Grid>
-			<Grid item xs={12} sm={4} lg={5} className={classes.btnWrapper}>
-				<Button
-					onClick={handleOpen}
-					variant='contained'
-					className={classes.btn}
-				>
-					Sign up to ride
-				</Button>
-			</Grid>
+  return (
+    <Grid id="signUp" container className={classes.signUp}>
+      <img
+        src={largeCircle}
+        alt=""
+        className={classes.largeCircle}
+        data-aos="fade-right"
+        data-aos-delay="300"
+      />
+      <img
+        src={smallCircle}
+        alt=""
+        className={classes.smallCircle}
+        data-aos="fade-left"
+        data-aos-delay="300"
+      />
+      <Grid
+        item
+        xs={12}
+        md={7}
+        className={classes.textWrapper}
+        data-aos="fade-right"
+      >
+        <Typography variant="h3" sx={{ marginBottom: 1 }}>
+          Earn extra money as a fasta boss
+        </Typography>
+        <Typography className={classes.txt2}>
+          Set your own schedule, become a Fasta boss
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={5}
+        className={classes.btnWrapper}
+        data-aos="fade-left"
+      >
+        <Button
+          onClick={handleOpen}
+          variant="contained"
+          className={classes.btn}
+        >
+          Sign up to ride
+        </Button>
+      </Grid>
 
-			<Toaster position='top-right' reverseOrder={false} />
+      <Toaster position="top-right" reverseOrder={false} />
 
-			<SignUpForm
-				open={open}
-				setOpen={setOpen}
-				handleClose={handleClose}
-				notify={notify}
-			/>
-		</Grid>
-	)
+      <SignUpForm
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+        notify={notify}
+      />
+    </Grid>
+  )
 }
 
 export default SignUp

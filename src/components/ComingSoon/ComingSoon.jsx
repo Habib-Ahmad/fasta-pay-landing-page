@@ -11,81 +11,100 @@ import SignUpForm from '../SignUpForm/SignUpForm'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const ComingSoon = () => {
-	const classes = useStyles()
-	const location = useLocation()
-	const nav = useNavigate()
+  const classes = useStyles()
+  const location = useLocation()
+  const nav = useNavigate()
 
-	useEffect(() => {
-		if (!location.search.includes('modalOpened=true')) {
-			setOpen(false)
-		}
-	}, [location])
+  useEffect(() => {
+    if (!location.search.includes('modalOpened=true')) {
+      setOpen(false)
+    }
+  }, [location])
 
-	const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
-	const handleOpen = () => {
-		nav(location.pathname + '?modalOpened=true')
-		setOpen(true)
-	}
+  const handleOpen = () => {
+    nav(location.pathname + '?modalOpened=true')
+    setOpen(true)
+  }
 
-	const handleClose = () => setOpen(false)
+  const handleClose = () => setOpen(false)
 
-	const notify = () => toast.success('You have successfuly subscribed')
+  const notify = () => toast.success('You have successfuly subscribed')
 
-	return (
-		<Box className={classes.comingSoon}>
-			<Toaster position='top-right' reverseOrder={false} />
-			<img src={largeFox} alt='' className={classes.largeFox} />
-			<img src={smallFox} alt='' className={classes.smallFox} />
-			<img src={smallFox} alt='' className={classes.smallFox2} />
+  return (
+    <Box className={classes.comingSoon}>
+      <Toaster position="top-right" reverseOrder={false} />
+      <img
+        src={largeFox}
+        alt=""
+        className={classes.largeFox}
+        data-aos="fade-down"
+      />
+      <img src={smallFox} alt="" className={classes.smallFox} />
+      <img src={smallFox} alt="" className={classes.smallFox2} />
 
-			<Typography className={classes.heading}>Coming Soon</Typography>
+      <Typography className={classes.heading} data-aos="fade-up">
+        Coming Soon
+      </Typography>
 
-			<Box className={classes.btnWrapper}>
-				<IconButton disableRipple>
-					<img
-						src={appStore}
-						alt='download on the App Store'
-						style={{ width: '100%' }}
-					/>
-				</IconButton>
-				<IconButton disableRipple>
-					<img
-						src={playStore}
-						alt='download on Google Play'
-						style={{ width: '100%' }}
-					/>
-				</IconButton>
-			</Box>
+      <Box
+        className={classes.btnWrapper}
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <IconButton disableRipple>
+          <img
+            src={appStore}
+            alt="download on the App Store"
+            style={{ width: '100%' }}
+          />
+        </IconButton>
+        <IconButton disableRipple>
+          <img
+            src={playStore}
+            alt="download on Google Play"
+            style={{ width: '100%' }}
+          />
+        </IconButton>
+      </Box>
 
-			<Typography className={classes.txt}>
-				Subcribe to be the first to get notifications on our services when we
-				launch
-			</Typography>
+      <Typography
+        className={classes.txt}
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        Subcribe to be the first to get notifications on our services when we
+        launch
+      </Typography>
 
-			<Box className={classes.inputWrapper}>
-				<Button
-					variant='contained'
-					sx={{
-						backgroundColor: '#004266',
-						height: '54px',
-						width: '173px',
-						margin: '0 auto'
-					}}
-					onClick={handleOpen}
-				>
-					Subscribe
-				</Button>
-			</Box>
+      <Box
+        className={classes.inputWrapper}
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: '#004266',
+            height: '54px',
+            width: '173px',
+            margin: '0 auto'
+          }}
+          onClick={handleOpen}
+        >
+          Subscribe
+        </Button>
+      </Box>
 
-			<SignUpForm
-				open={open}
-				setOpen={setOpen}
-				handleClose={handleClose}
-				notify={notify}
-			/>
-		</Box>
-	)
+      <SignUpForm
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+        notify={notify}
+      />
+    </Box>
+  )
 }
 
 export default ComingSoon

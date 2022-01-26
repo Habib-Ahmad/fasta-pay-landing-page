@@ -8,22 +8,23 @@ import { BrowserRouter } from 'react-router-dom'
 import { theme } from './themes/theme'
 import { ThemeProvider } from '@mui/material/styles'
 import { Box } from '@mui/material'
+import './aos'
 
 const App = () => {
-	return (
-		<ThemeProvider theme={theme}>
-			<BrowserRouter>
-				<Box sx={{ overflowX: 'hidden' }}>
-					<NavBar />
-					<Header />
-					<SignUp />
-					<Services />
-					<ComingSoon />
-					<Footer />
-				</Box>
-			</BrowserRouter>
-		</ThemeProvider>
-	)
+  return (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Box sx={{ overflowX: 'hidden' }}>
+          <NavBar />
+          <Header />
+          <SignUp />
+          <Services />
+          <ComingSoon />
+          <Footer />
+        </Box>
+      </BrowserRouter>
+    </ThemeProvider>
+  )
 }
 
 export default App
