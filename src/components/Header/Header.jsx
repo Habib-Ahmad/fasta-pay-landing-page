@@ -94,7 +94,7 @@ const Header = () => {
             <span className={classes.head1}>Keke rides </span>
             <span className={classes.head2}>
               have never been this easy,
-              <br className={classes.br} /> Click and Ride
+              <br className={classes.br} /> Signup and Ride
             </span>
           </Typography>
 
