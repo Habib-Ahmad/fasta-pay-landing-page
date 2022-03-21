@@ -1,18 +1,18 @@
 import { Grid, Typography, useMediaQuery } from '@mui/material'
 import { Box } from '@mui/system'
-import useStyles from './useStyles'
 import bookRides from '../../assets/bookRides.png'
-import sendDeliveries from '../../assets/sendDeliveries.png'
 import earnPoints from '../../assets/earnPoints.svg'
+import sendDeliveries from '../../assets/sendDeliveries.png'
+import abstract from '../../assets/services/abstract.svg'
+import circle from '../../assets/services/circle.svg'
+import circle2 from '../../assets/services/circle2.svg'
+import circle3 from '../../assets/services/circle3.svg'
 import iPhone from '../../assets/services/iPhoneDesktop.png'
 import iPhoneMobile from '../../assets/services/iPhoneMobile.png'
 import iPhoneWithHand from '../../assets/services/iPhoneWithHandDesktop.png'
 import iPhoneWithHandMobile from '../../assets/services/iPhoneWithHandMobile.png'
 import money from '../../assets/services/money.svg'
-import circle from '../../assets/services/circle.svg'
-import circle2 from '../../assets/services/circle2.svg'
-import circle3 from '../../assets/services/circle3.svg'
-import abstract from '../../assets/services/abstract.svg'
+import useStyles from './useStyles'
 
 const Services = () => {
   const classes = useStyles()
@@ -43,7 +43,12 @@ const Services = () => {
         for other trips or donate to any charity foundation of your choice.
       </Typography>
 
-      <Grid mt={{ xs: 10, sm: 0 }} container sx={{ position: 'relative' }}>
+      <Grid
+        id="bookRide"
+        mt={{ xs: 10, sm: 0 }}
+        container
+        sx={{ position: 'relative' }}
+      >
         <Grid item xs={12} sm={6} data-aos="fade-right">
           <Box className={classes.feature}>
             <Box
@@ -87,6 +92,7 @@ const Services = () => {
       </Grid>
 
       <Grid
+        id="deliveries"
         container
         sx={{ display: 'flex', alignItems: 'center' }}
         mt={{ xs: 10, md: -10 }}
@@ -115,7 +121,7 @@ const Services = () => {
             </Box>
             <Box>
               <Typography className={classes.featureTxt1}>
-                Send Deliverires
+                Send Deliveries
               </Typography>
               <Typography className={classes.featureTxt2}>
                 Easily send deliveries to any location of your choice
@@ -130,7 +136,11 @@ const Services = () => {
         <img src={circle3} alt="" className={classes.circle3} />
       </Grid>
 
-      <Grid container sx={{ display: 'flex', alignItems: 'center' }}>
+      <Grid
+        id="earnPoint"
+        container
+        sx={{ display: 'flex', alignItems: 'center' }}
+      >
         <Grid item xs={12} sm={6} data-aos="fade-right">
           <Box className={classes.feature}>
             <img

@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { Box } from '@mui/system'
 import {
   Button,
   Grid,
@@ -7,9 +5,11 @@ import {
   SwipeableDrawer,
   Typography
 } from '@mui/material'
-import useStyles from './useStyles'
-import menuIcon from '../../assets/menu.svg'
+import { Box } from '@mui/system'
+import { useState } from 'react'
 import logo from '../../assets/logo.svg'
+import menuIcon from '../../assets/menu.svg'
+import useStyles from './useStyles'
 
 const NavBar = () => {
   const [displayDrawer, setDisplayDrawer] = useState(false)
@@ -86,7 +86,10 @@ const NavBar = () => {
         >
           <Box className={classes.menuItems}>
             <Button
-              onClick={toggleDrawer(false)}
+              onClick={() => {
+                toggleDrawer(false)
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
               className={classes.navBtn}
               href="#home"
               disableRipple

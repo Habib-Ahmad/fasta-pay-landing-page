@@ -192,6 +192,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '18vw',
     flexWrap: 'wrap',
     padding: theme.spacing(5),
+    cursor: 'pointer',
 
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'flex-start'

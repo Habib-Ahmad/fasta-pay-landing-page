@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react'
+import { Button, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { Typography, Button } from '@mui/material'
+import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
-import useStyles from './useStyles'
-import keke from '../../assets/header/keke.svg'
-import smallKeke from '../../assets/header/smallKeke.svg'
-import man from '../../assets/header/man.svg'
-import smallMan from '../../assets/header/smallMan.svg'
-import f from '../../assets/header/f.svg'
-import leftBlob from '../../assets/header/leftBlob.svg'
-import rightBlob from '../../assets/header/rightBlob.svg'
-import leftCircle from '../../assets/header/leftCircle.svg'
-import bookRides from '../../assets/bookRides.png'
-import sendDeliveries from '../../assets/sendDeliveries.png'
-import earnPoints from '../../assets/header/earnPoints.svg'
-import SignUpForm from '../SignUpForm/SignUpForm'
 import { useLocation, useNavigate } from 'react-router-dom'
+import bookRides from '../../assets/bookRides.png'
+import earnPoints from '../../assets/header/earnPoints.svg'
+import f from '../../assets/header/f.svg'
+import keke from '../../assets/header/keke.svg'
+import leftBlob from '../../assets/header/leftBlob.svg'
+import leftCircle from '../../assets/header/leftCircle.svg'
+import man from '../../assets/header/man.svg'
+import rightBlob from '../../assets/header/rightBlob.svg'
+import smallKeke from '../../assets/header/smallKeke.svg'
+import smallMan from '../../assets/header/smallMan.svg'
+import sendDeliveries from '../../assets/sendDeliveries.png'
+import SignUpForm from '../SignUpForm/SignUpForm'
+import useStyles from './useStyles'
 
 const Header = () => {
   const classes = useStyles()
@@ -40,7 +40,7 @@ const Header = () => {
   const notify = () => toast.success('You have successfuly subscribed')
 
   return (
-    <Box className={classes.header}>
+    <Box id="home" className={classes.header}>
       <Toaster position="top-right" />
 
       <Box sx={{ display: 'flex' }}>
@@ -121,6 +121,9 @@ const Header = () => {
               variant="outlined"
               size="large"
               sx={{ textTransform: 'none' }}
+              onClick={() => {
+                document.getElementById('services').scrollIntoView()
+              }}
             >
               View more
             </Button>
@@ -136,7 +139,12 @@ const Header = () => {
       />
 
       <Box className={classes.features}>
-        <Box className={classes.feature}>
+        <Box
+          className={classes.feature}
+          onClick={() => {
+            document.getElementById('services').scrollIntoView()
+          }}
+        >
           <Box
             className={classes.featureImg}
             sx={{
@@ -154,7 +162,12 @@ const Header = () => {
           </Box>
         </Box>
 
-        <Box className={classes.feature}>
+        <Box
+          className={classes.feature}
+          onClick={() => {
+            document.getElementById('deliveries').scrollIntoView()
+          }}
+        >
           <Box
             className={classes.featureImg}
             sx={{
@@ -178,7 +191,12 @@ const Header = () => {
           </Box>
         </Box>
 
-        <Box className={classes.feature}>
+        <Box
+          className={classes.feature}
+          onClick={() => {
+            document.getElementById('earnPoint').scrollIntoView()
+          }}
+        >
           <img
             src={earnPoints}
             alt="Earn free points"
