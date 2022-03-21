@@ -3,7 +3,11 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   header: {
     position: 'relative',
-    minHeight: '100vh'
+    minHeight: '100vh',
+
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '50px'
+    }
   },
   keke: {
     width: '23vw',
