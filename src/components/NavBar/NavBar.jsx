@@ -54,8 +54,8 @@ const NavBar = () => {
             Home
           </Typography>
         </Button>
-        <Button className={classes.navBtn} href="#signUp" disableRipple>
-          Become a boss
+        <Button className={classes.navBtn} href="#business" disableRipple>
+          Fastpay for Bussiness
         </Button>
         <Button className={classes.navBtn} href="#services" disableRipple>
           Services
@@ -99,10 +99,10 @@ const NavBar = () => {
             <Button
               onClick={toggleDrawer(false)}
               className={classes.navBtn}
-              href="#signUp"
+              href="#business"
               disableRipple
             >
-              Become a boss
+              Fastpay for Bussiness
             </Button>
             <Button
               onClick={toggleDrawer(false)}
