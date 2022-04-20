@@ -1,19 +1,16 @@
-import { Button, Typography } from '@mui/material'
+import { IconButton, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useLocation, useNavigate } from 'react-router-dom'
-import bookRides from '../../assets/bookRides.png'
-import earnPoints from '../../assets/header/earnPoints.svg'
-import f from '../../assets/header/f.svg'
-import keke from '../../assets/header/keke.svg'
 import leftBlob from '../../assets/header/leftBlob.svg'
-import leftCircle from '../../assets/header/leftCircle.svg'
-import man from '../../assets/header/man.svg'
-import rightBlob from '../../assets/header/rightBlob.svg'
-import smallKeke from '../../assets/header/smallKeke.svg'
-import smallMan from '../../assets/header/smallMan.svg'
-import sendDeliveries from '../../assets/sendDeliveries.png'
+import getStarted from '../../assets/header/getStarted.svg'
+import qrCode from '../../assets/header/qrCode.png'
+import spiral from '../../assets/header/spiral.svg'
+import spiral2 from '../../assets/header/spiral2.svg'
+import man from '../../assets/header/man.png'
+import point from '../../assets/header/point.svg'
+import phone from '../../assets/header/phone.png'
 import SignUpForm from '../SignUpForm/SignUpForm'
 import useStyles from './useStyles'
 
@@ -43,91 +40,79 @@ const Header = () => {
     <Box id="home" className={classes.header}>
       <Toaster position="top-right" />
 
-      <Box sx={{ display: 'flex' }}>
-        <img className={classes.keke} src={keke} alt="Keke" data-aos="fade" />
-        <img
-          className={classes.smallKeke}
-          src={smallKeke}
-          alt="Small Keke"
-          data-aos="fade-right"
-        />
-        <img
-          className={classes.man}
-          src={man}
-          alt="Man"
-          data-aos="fade"
-          data-aos-delay="100"
-        />
-        <img
-          className={classes.smallMan}
-          src={smallMan}
-          alt="Man"
-          data-aos="fade"
-          data-aos-delay="300"
-        />
-        <img className={classes.f} src={f} alt="F" data-aos="fade" />
-        <img
-          className={classes.leftBlob}
-          src={leftBlob}
-          alt="Left Blob"
-          data-aos="fade"
-        />
-        <img
-          className={classes.rightBlob}
-          src={rightBlob}
-          alt="Right Blob"
-          data-aos="fade"
-          data-aos-delay="300"
-        />
-        <img
-          className={classes.leftCircle}
-          src={leftCircle}
-          alt="Left Circle"
-        />
+      <img
+        className={classes.leftBlob}
+        src={leftBlob}
+        alt="Left Blob"
+        // data-aos="fade"
+      />
+      <img
+        className={classes.qrCode}
+        src={qrCode}
+        alt="QR Code"
+        // data-aos="fade"
+      />
+      <img
+        className={classes.spiral}
+        src={spiral}
+        alt="Arrow"
+        // data-aos="fade"
+      />
+      <img
+        className={classes.man}
+        src={man}
+        alt="Man"
+        //  data-aos="fade"
+      />
+      <img
+        className={classes.point}
+        src={point}
+        alt="Point"
+        //  data-aos="fade"
+      />
+      <img
+        className={classes.phone}
+        src={phone}
+        alt="Phone"
+        //  data-aos="fade"
+      />
 
-        <Box className={classes.headingWrapper}>
-          <Typography
-            variant="h1"
-            className={classes.heading}
-            data-aos="fade-up"
+      <Box className={classes.headingWrapper}>
+        <Typography variant="h1" className={classes.heading} data-aos="fade-up">
+          The simplest way to <span>send and receive money</span> while also
+          earning money.
+        </Typography>
+
+        <Box
+          className={classes.btnWrapper}
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          <img
+            className={classes.spiral2}
+            src={spiral2}
+            alt="Arrow"
+            data-aos="fade"
+          />
+          <IconButton
+            sx={{ padding: '0', justifyContent: 'flex-start' }}
+            onClick={handleOpen}
+            variant="contained"
+            size="large"
           >
-            <span className={classes.head1}>Keke rides </span>
-            <span className={classes.head2}>
-              have never been this easy,
-              <br className={classes.br} /> Signup and Ride
-            </span>
-          </Typography>
+            <img style={{ width: '70%' }} src={getStarted} alt="Get started" />
+          </IconButton>
 
-          <Typography
-            className={classes.subHeading}
-            data-aos="fade-up"
-            data-aos-delay="50"
+          {/* <Button
+            variant="outlined"
+            size="large"
+            sx={{ textTransform: 'none' }}
+            onClick={() => {
+              document.getElementById('services').scrollIntoView()
+            }}
           >
-            FASTA TECHNOLOGY LTD is a team of experienced people from different
-            fields that aim to simplify and secure the use of keke rides in
-            Nigeria.
-          </Typography>
-
-          <Box
-            className={classes.btnWrapper}
-            data-aos="fade-up"
-            data-aos-delay="150"
-          >
-            <Button onClick={handleOpen} variant="contained" size="large">
-              Sign up
-            </Button>
-
-            <Button
-              variant="outlined"
-              size="large"
-              sx={{ textTransform: 'none' }}
-              onClick={() => {
-                document.getElementById('services').scrollIntoView()
-              }}
-            >
-              View more
-            </Button>
-          </Box>
+            View more
+          </Button> */}
         </Box>
       </Box>
 
@@ -137,82 +122,6 @@ const Header = () => {
         handleClose={handleClose}
         notify={notify}
       />
-
-      <Box className={classes.features}>
-        <Box
-          className={classes.feature}
-          onClick={() => {
-            document.getElementById('services').scrollIntoView()
-          }}
-        >
-          <Box
-            className={classes.featureImg}
-            sx={{
-              backgroundColor: '#efeaff'
-            }}
-            data-aos="fade-left"
-          >
-            <img src={bookRides} alt="Book rides" style={{ width: 60 }} />
-          </Box>
-          <Box data-aos="fade-down">
-            <Typography className={classes.featuresTxt1}>Book Rides</Typography>
-            <Typography className={classes.featuresTxt2}>
-              Easily book keke rides
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box
-          className={classes.feature}
-          onClick={() => {
-            document.getElementById('deliveries').scrollIntoView()
-          }}
-        >
-          <Box
-            className={classes.featureImg}
-            sx={{
-              backgroundColor: '#ecffda'
-            }}
-            data-aos="fade-left"
-          >
-            <img
-              src={sendDeliveries}
-              alt="Send deliveries"
-              style={{ width: 60 }}
-            />
-          </Box>
-          <Box data-aos="fade-down">
-            <Typography className={classes.featuresTxt1}>
-              Send deliveries
-            </Typography>
-            <Typography className={classes.featuresTxt2}>
-              Easily send deliveries
-            </Typography>
-          </Box>
-        </Box>
-
-        <Box
-          className={classes.feature}
-          onClick={() => {
-            document.getElementById('earnPoint').scrollIntoView()
-          }}
-        >
-          <img
-            src={earnPoints}
-            alt="Earn free points"
-            style={{ marginRight: 15 }}
-            data-aos="fade-left"
-          />
-          <Box data-aos="fade-down">
-            <Typography className={classes.featuresTxt1}>
-              Earn free points
-            </Typography>
-            <Typography className={classes.featuresTxt2}>
-              Can book a ride, donate or mobile recharge
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
     </Box>
   )
 }
