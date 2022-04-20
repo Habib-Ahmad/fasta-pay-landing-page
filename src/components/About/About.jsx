@@ -3,11 +3,12 @@ import { Button, Grid, Typography } from '@mui/material'
 import useStyles from './useStyles'
 import largeCircle from '../../assets/signUp/largeCircle.svg'
 import smallCircle from '../../assets/signUp/smallCircle.svg'
+import mobileCircle from '../../assets/signUp/mobileCircle.svg'
 import toast, { Toaster } from 'react-hot-toast'
 import { useLocation, useNavigate } from 'react-router-dom'
 import SignUpForm from '../SignUpForm/SignUpForm'
 
-const SignUp = () => {
+const About = () => {
   const classes = useStyles()
   const location = useLocation()
   const nav = useNavigate()
@@ -30,7 +31,7 @@ const SignUp = () => {
   const notify = () => toast.success('You have successfuly subscribed')
 
   return (
-    <Grid id="signUp" container className={classes.signUp}>
+    <Grid id="about" container className={classes.about}>
       <img
         src={largeCircle}
         alt=""
@@ -45,33 +46,31 @@ const SignUp = () => {
         data-aos="fade-left"
         data-aos-delay="300"
       />
-      <Grid
-        item
-        xs={12}
-        md={7}
-        className={classes.textWrapper}
-        data-aos="fade-right"
-      >
-        <Typography variant="h3" sx={{ marginBottom: 1 }}>
-          Earn extra money as a fasta boss
+      <img
+        src={mobileCircle}
+        alt=""
+        className={classes.mobileCircle}
+        data-aos="fade-left"
+        data-aos-delay="300"
+      />
+      <Grid item xs={12} className={classes.textWrapper} data-aos="fade-right">
+        <Typography variant="h3" sx={{ margin: '32px 0' }}>
+          About Us
         </Typography>
         <Typography className={classes.txt2}>
-          Set your own schedule, become a Fasta boss
+          We provide fast, efficient and secure payment system with the aid of
+          our Advance QR code. Earn points for every transactions that you make,
+          which you can use to for another transaction or donate to any charity
+          foundation of your choice.
         </Typography>
       </Grid>
-      <Grid
-        item
-        xs={12}
-        md={5}
-        className={classes.btnWrapper}
-        data-aos="fade-left"
-      >
+      <Grid item xs={12} className={classes.btnWrapper} data-aos="fade-left">
         <Button
           onClick={handleOpen}
           variant="contained"
           className={classes.btn}
         >
-          Sign up to ride
+          Get Started
         </Button>
       </Grid>
 
@@ -87,4 +86,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default About

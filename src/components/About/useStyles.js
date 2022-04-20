@@ -1,16 +1,17 @@
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
-  signUp: {
+  about: {
     backgroundColor: theme.palette.primary.main,
     width: '100%',
-    height: '243px',
+    height: '400px',
     color: '#fff',
     position: 'relative',
-    padding: '0 5vw',
+    padding: '0 10vw',
 
     [theme.breakpoints.down('sm')]: {
-      height: '189px'
+      height: '70vh',
+      paddingBottom: '10vw'
     }
   },
   largeCircle: {
@@ -30,22 +31,37 @@ const useStyles = makeStyles((theme) => ({
       display: 'none'
     }
   },
+  mobileCircle: {
+    display: 'none',
+
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+      position: 'absolute',
+      right: 0,
+      top: 0
+    }
+  },
   textWrapper: {
     width: '100%',
-    display: 'grid',
-    placeItems: 'center',
+    paddingTop: '2vw',
     zIndex: 100
   },
   txt2: {
     '&.MuiTypography-root': {
-      fontSize: '1rem',
-      textAlign: 'center'
+      fontSize: '1.2rem',
+      lineHeight: '2.4rem'
     }
   },
   btnWrapper: {
     display: 'grid',
-    placeItems: 'center',
-    width: '100%'
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+    width: '100%',
+
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
   },
   btn: {
     '&.MuiButton-root': {
@@ -55,11 +71,6 @@ const useStyles = makeStyles((theme) => ({
       width: '237px',
       height: '54px',
       fontSize: 16,
-      textTransform: 'uppercase',
-
-      '&:hover': {
-        color: '#fff'
-      },
 
       [theme.breakpoints.down('lg')]: {
         width: '200px'

@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import NavBar from './components/NavBar/NavBar'
 import Services from './components/Services/Services'
-import SignUp from './components/SignUp/SignUp'
+import About from './components/About/About'
 import { theme } from './themes/theme'
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
         <Box sx={{ overflowX: 'hidden' }}>
           <NavBar />
           <Header />
-          <SignUp />
+          <About />
           <Services />
           <ComingSoon />
           <Footer />
