@@ -12,16 +12,20 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   heading: {
-    fontSize: '1.8rem',
-    fontWeight: '500'
+    '&.MuiTypography-root': {
+      fontSize: '1.8rem',
+      fontWeight: '500'
+    }
   },
   timer: {
-    fontSize: '4rem',
-    fontWeight: '500',
+    '&.MuiTypography-root': {
+      fontSize: '4rem',
+      fontWeight: '500',
 
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '3.5rem',
-      textAlign: 'center'
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '3.5rem',
+        textAlign: 'center'
+      }
     }
   },
   btnWrapper: {
@@ -46,13 +50,15 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   text1: {
-    fontSize: '1.2rem',
-    textAlign: 'center',
-    marginBottom: '30px',
-    padding: '0 5vw',
+    '&.MuiTypography-root': {
+      fontSize: '1.2rem',
+      textAlign: 'center',
+      marginBottom: '30px',
+      padding: '0 5vw',
 
-    [theme.breakpoints.down('sm')]: {
-      padding: 0
+      [theme.breakpoints.down('sm')]: {
+        padding: 0
+      }
     }
   }
 }))

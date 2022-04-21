@@ -1,7 +1,7 @@
 import { Button, Grid, IconButton, SwipeableDrawer } from '@mui/material'
 import { Box } from '@mui/system'
 import { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import logo from '../../assets/logo.svg'
 import menuIcon from '../../assets/menu.svg'
 import useStyles from './useStyles'
@@ -9,6 +9,7 @@ import useStyles from './useStyles'
 const NavBar = () => {
   const classes = useStyles()
   const navigate = useNavigate()
+  const { pathname } = useLocation()
 
   const [displayDrawer, setDisplayDrawer] = useState(false)
   const [active, setActive] = useState('/')
@@ -70,16 +71,18 @@ const NavBar = () => {
           Fastpay for Bussiness
         </Button>
 
-        <Button
-          className={
-            active === '/services' ? classes.activeNavBtn : classes.navBtn
-          }
-          onClick={() => setActive('/services')}
-          href="#services"
-          disableRipple
-        >
-          Services
-        </Button>
+        {pathname === '/' && (
+          <Button
+            className={
+              active === '/services' ? classes.activeNavBtn : classes.navBtn
+            }
+            onClick={() => setActive('/services')}
+            href="#services"
+            disableRipple
+          >
+            Services
+          </Button>
+        )}
       </Grid>
 
       <Grid
@@ -89,14 +92,16 @@ const NavBar = () => {
         className={classes.contactBtnWrapper}
         data-aos="fade-left"
       >
-        <Button
-          onClick={() => setActive('/contact')}
-          variant="contained"
-          href="#footer"
-          size="medium"
-        >
-          Contact us
-        </Button>
+        {pathname === '/' && (
+          <Button
+            onClick={() => setActive('/contact')}
+            variant="contained"
+            href="#footer"
+            size="medium"
+          >
+            Contact us
+          </Button>
+        )}
       </Grid>
 
       <Grid item xs={2} className={classes.menuWrapper}>
@@ -136,22 +141,26 @@ const NavBar = () => {
               Fastpay for Bussiness
             </Button>
 
-            <Button
-              className={classes.navBtn}
-              onClick={toggleDrawer(false)}
-              href="#services"
-              disableRipple
-            >
-              Services
-            </Button>
+            {pathname === '/' && (
+              <>
+                <Button
+                  className={classes.navBtn}
+                  onClick={toggleDrawer(false)}
+                  href="#services"
+                  disableRipple
+                >
+                  Services
+                </Button>
 
-            <Button
-              variant="contained"
-              onClick={toggleDrawer(false)}
-              href="#footer"
-            >
-              Contact us
-            </Button>
+                <Button
+                  variant="contained"
+                  onClick={toggleDrawer(false)}
+                  href="#footer"
+                >
+                  Contact us
+                </Button>
+              </>
+            )}
           </Box>
         </SwipeableDrawer>
       </Grid>

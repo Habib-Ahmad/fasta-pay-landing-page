@@ -7,6 +7,7 @@ import playStore from '../../assets/footer/playStore.svg'
 import useStyles from './useStyles'
 import { useLocation, useNavigate } from 'react-router'
 import SignUpForm from '../SignUpForm/SignUpForm'
+import Countdown from 'react-countdown'
 
 const Footer = () => {
   const classes = useStyles()
@@ -33,7 +34,7 @@ const Footer = () => {
           Count down to launch
         </Typography>
         <Typography className={classes.timer} data-aos="fade-up">
-          10:00:00:60
+          <Countdown date={Date.now() + 6000000000} />
         </Typography>
 
         <Box
@@ -69,8 +70,6 @@ const Footer = () => {
           Subscribe
         </Button>
       </Grid>
-
-      <Grid item xs={12}></Grid>
 
       <SignUpForm
         open={open}

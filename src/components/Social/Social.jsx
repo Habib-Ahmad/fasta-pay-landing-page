@@ -9,24 +9,14 @@ const Social = () => {
 
   return (
     <Box className={classes.social}>
-      <IconButton data-aos="fade-left">
-        <img src={facebook} alt="facebook" />
+      <IconButton href="https://twitter.com/fastaride" target="_blank">
+        <img src={twitter} alt="twitter" />
       </IconButton>
-      <IconButton
-        href="https://instagram.com/fastaride"
-        target="_blank"
-        data-aos="fade-left"
-        data-aos-delay="300"
-      >
+      <IconButton href="https://instagram.com/fastaride" target="_blank">
         <img src={instagram} alt="instagram" />
       </IconButton>
-      <IconButton
-        href="https://twitter.com/fastaride"
-        target="_blank"
-        data-aos="fade-left"
-        data-aos-delay="600"
-      >
-        <img src={twitter} alt="twitter" />
+      <IconButton>
+        <img src={facebook} alt="facebook" />
       </IconButton>
     </Box>
   )
