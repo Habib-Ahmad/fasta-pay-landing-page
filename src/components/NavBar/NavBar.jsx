@@ -1,19 +1,18 @@
-import {
-  Button,
-  Grid,
-  IconButton,
-  SwipeableDrawer,
-  Typography
-} from '@mui/material'
+import { Button, Grid, IconButton, SwipeableDrawer } from '@mui/material'
 import { Box } from '@mui/system'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import logo from '../../assets/logo.svg'
 import menuIcon from '../../assets/menu.svg'
 import useStyles from './useStyles'
 
 const NavBar = () => {
-  const [displayDrawer, setDisplayDrawer] = useState(false)
   const classes = useStyles()
+  const navigate = useNavigate()
+
+  const [displayDrawer, setDisplayDrawer] = useState(false)
+  const [active, setActive] = useState('/')
+  console.log(active)
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -47,17 +46,38 @@ const NavBar = () => {
         className={classes.navBtnWrapper}
         data-aos="fade-down"
       >
-        <Button className={classes.navBtn} href="#home" disableRipple>
-          <Typography
-            sx={{ fontWeight: 700, color: '#00AEE8', fontSize: '1rem' }}
-          >
-            Home
-          </Typography>
+        <Button
+          className={active === '/' ? classes.activeNavBtn : classes.navBtn}
+          onClick={() => {
+            setActive('/')
+            navigate('/')
+          }}
+          disableRipple
+        >
+          Home
         </Button>
-        <Button className={classes.navBtn} href="#business" disableRipple>
+
+        <Button
+          className={
+            active === '/business' ? classes.activeNavBtn : classes.navBtn
+          }
+          onClick={() => {
+            setActive('/business')
+            navigate('/business')
+          }}
+          disableRipple
+        >
           Fastpay for Bussiness
         </Button>
-        <Button className={classes.navBtn} href="#services" disableRipple>
+
+        <Button
+          className={
+            active === '/services' ? classes.activeNavBtn : classes.navBtn
+          }
+          onClick={() => setActive('/services')}
+          href="#services"
+          disableRipple
+        >
           Services
         </Button>
       </Grid>
@@ -69,7 +89,12 @@ const NavBar = () => {
         className={classes.contactBtnWrapper}
         data-aos="fade-left"
       >
-        <Button variant="contained" href="#footer" size="medium">
+        <Button
+          onClick={() => setActive('/contact')}
+          variant="contained"
+          href="#footer"
+          size="medium"
+        >
           Contact us
         </Button>
       </Grid>
@@ -87,31 +112,39 @@ const NavBar = () => {
           <Box className={classes.menuItems}>
             <Button
               onClick={() => {
+                setActive('/')
+                navigate('/')
                 toggleDrawer(false)
-                window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className={classes.navBtn}
-              href="#home"
+              className={active === '/' ? classes.activeNavBtn : classes.navBtn}
               disableRipple
             >
               Home
             </Button>
+
             <Button
-              onClick={toggleDrawer(false)}
-              className={classes.navBtn}
-              href="#business"
+              onClick={() => {
+                setActive('/business')
+                navigate('/business')
+                toggleDrawer(false)
+              }}
+              className={
+                active === '/business' ? classes.activeNavBtn : classes.navBtn
+              }
               disableRipple
             >
               Fastpay for Bussiness
             </Button>
+
             <Button
-              onClick={toggleDrawer(false)}
               className={classes.navBtn}
+              onClick={toggleDrawer(false)}
               href="#services"
               disableRipple
             >
               Services
             </Button>
+
             <Button
               variant="contained"
               onClick={toggleDrawer(false)}

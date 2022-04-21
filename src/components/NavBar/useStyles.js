@@ -32,6 +32,20 @@ const useStyles = makeStyles((theme) => ({
       display: 'none'
     }
   },
+  activeNavBtn: {
+    '&.MuiButton-root': {
+      color: '#00AEE8',
+      textTransform: 'none',
+      fontSize: '1rem',
+      fontWeight: 700,
+      marginRight: theme.spacing(3),
+      whiteSpace: 'nowrap',
+
+      '&:hover': {
+        backgroundColor: 'transparent'
+      }
+    }
+  },
   navBtn: {
     '&.MuiButton-root': {
       color: '#000',

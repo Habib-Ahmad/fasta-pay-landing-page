@@ -1,103 +1,84 @@
-import { Grid, IconButton, Typography } from '@mui/material'
+import { useState } from 'react'
+import { Button, Grid, IconButton, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import facebook from '../../assets/footer/facebook.svg'
-import instagram from '../../assets/footer/instagram.svg'
-import linkedin from '../../assets/footer/linkedin.svg'
-import twitter from '../../assets/footer/twitter.svg'
-import logo from '../../assets/logo.svg'
+import toast, { Toaster } from 'react-hot-toast'
+import appStore from '../../assets/footer/appStore.svg'
+import playStore from '../../assets/footer/playStore.svg'
 import useStyles from './useStyles'
+import { useLocation, useNavigate } from 'react-router'
+import SignUpForm from '../SignUpForm/SignUpForm'
 
 const Footer = () => {
   const classes = useStyles()
+  const location = useLocation()
+  const nav = useNavigate()
+
+  const [open, setOpen] = useState(false)
+
+  const handleOpen = () => {
+    nav(location.pathname + '?modalOpened=true')
+    setOpen(true)
+  }
+
+  const handleClose = () => setOpen(false)
+
+  const notify = () => toast.success('You have successfuly subscribed')
 
   return (
-    <>
-      <Grid
-        id="footer"
-        container
-        alignItems="center"
-        className={classes.footer}
-      >
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          mb={{ xs: 8, sm: 0 }}
-          display="flex"
-          justifyContent="center"
-          data-aos="fade-down-right"
+    <Grid id="footer" container alignItems="center" className={classes.footer}>
+      <Toaster position="top-right" reverseOrder={false} />
+
+      <Grid item xs={12} sm={6} mb={{ xs: 8, sm: 0 }} data-aos="fade-right">
+        <Typography className={classes.heading} data-aos="fade-up">
+          Count down to launch
+        </Typography>
+        <Typography className={classes.timer} data-aos="fade-up">
+          10:00:00:60
+        </Typography>
+
+        <Box
+          className={classes.btnWrapper}
+          data-aos="fade-up"
+          data-aos-delay="300"
         >
-          <img
-            src={logo}
-            alt="fasta"
-            style={{ width: 'clamp(150px, 40vw, 400px)' }}
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6} className={classes.info}>
-          <Typography
-            sx={{ fontSize: 17, fontWeight: 500, marginBottom: 2 }}
-            className={classes.text1}
-            data-aos="fade-up"
-          >
-            Contact us
-          </Typography>
-          <Typography
-            sx={{ fontSize: 16, fontWeight: 400, marginBottom: 4 }}
-            className={classes.text2}
-            data-aos="fade-up"
-          >
-            <strong>Email:</strong> info@fastaride.ng
-          </Typography>
-          <Box sx={{ marginBottom: 2 }}>
-            <IconButton data-aos="fade-left">
-              <img
-                src={facebook}
-                alt="facebook"
-                style={{ width: 'clamp(60px, 10vw, 100px)' }}
-              />
-            </IconButton>
-            <IconButton
-              href="https://instagram.com/fastaride"
-              target="_blank"
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
-              <img
-                src={instagram}
-                alt="instagram"
-                style={{ width: 'clamp(60px, 10vw, 100px)' }}
-              />
-            </IconButton>
-            <IconButton
-              href="https://twitter.com/fastaride"
-              target="_blank"
-              data-aos="fade-left"
-              data-aos-delay="600"
-            >
-              <img
-                src={twitter}
-                alt="twitter"
-                style={{ width: 'clamp(60px, 10vw, 100px)' }}
-              />
-            </IconButton>
-            <IconButton data-aos="fade-left" data-aos-delay="900">
-              <img
-                src={linkedin}
-                alt="linkedin"
-                style={{ width: 'clamp(60px, 10vw, 100px)' }}
-              />
-            </IconButton>
-          </Box>
-
-          <Box className={classes.copyright}>
-            <Typography>
-              Copyright ® 2021 fasta inc. All rights Reserved
-            </Typography>
-          </Box>
-        </Grid>
+          <IconButton disableRipple>
+            <img src={appStore} alt="download on the App Store" />
+          </IconButton>
+          <IconButton disableRipple>
+            <img src={playStore} alt="download on Google Play" />
+          </IconButton>
+        </Box>
       </Grid>
-    </>
+
+      <Grid item xs={12} sm={6} className={classes.info}>
+        <Typography className={classes.text1} data-aos="fade-up">
+          Subcribe to be the first to get notification on our services when we
+          launch
+        </Typography>
+
+        <Button
+          variant="contained"
+          sx={{
+            backgroundColor: '#004266',
+            height: '54px',
+            width: '173px',
+            margin: '0 auto'
+          }}
+          onClick={handleOpen}
+        >
+          Subscribe
+        </Button>
+      </Grid>
+
+      <Grid item xs={12}></Grid>
+
+      <SignUpForm
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+        notify={notify}
+      />
+    </Grid>
   )
 }
 
