@@ -31,7 +31,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: fastaride.ng
+          server: win5236.site4now.net
           username: ${{ secrets.SMARTERASPFTPUSERNAME }}
           password: ${{ secrets.SMARTERASPFTPPASSWORD }}
           local-dir: ./build/
