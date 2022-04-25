@@ -8,7 +8,6 @@ on:
       - main
 
 #on: workflow_dispatch
-
 jobs:
   web-deploy:
     name: 🎉 Deploy
