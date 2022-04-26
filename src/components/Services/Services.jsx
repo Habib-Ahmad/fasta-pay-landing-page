@@ -5,6 +5,7 @@ import circle from '../../assets/services/circle.svg'
 import iPhone from '../../assets/services/iPhoneDesktop.png'
 import iPhoneWithHand from '../../assets/services/iPhoneWithHandDesktop.png'
 import money from '../../assets/services/money.svg'
+import phone from '../../assets/header/phone.gif'
 import useStyles from './useStyles'
 
 const Services = () => {
@@ -125,6 +126,15 @@ const Services = () => {
         <Grid item xs={6} className={classes.svg} data-aos="fade-left">
           <img src={money} alt="Money" style={{ width: '100%' }} />
         </Grid>
+      </Grid>
+
+      <Grid item xs={12}>
+        <img
+          src={phone}
+          alt="Phone"
+          data-aos="fade-right"
+          className={classes.phone}
+        />
       </Grid>
     </Box>
   )

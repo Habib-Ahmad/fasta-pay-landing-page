@@ -75,9 +75,7 @@ const useStyles = makeStyles((theme) => ({
     top: '45%',
 
     [theme.breakpoints.down('sm')]: {
-      top: '68%',
-      left: '10%',
-      width: '350px'
+      display: 'none'
     }
   },
   heading: {

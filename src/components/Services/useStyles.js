@@ -102,10 +102,13 @@ const useStyles = makeStyles((theme) => ({
       display: 'none'
     }
   },
-  circle3: {
-    position: 'absolute',
-    left: 0,
-    zIndex: -100
+  phone: {
+    display: 'none',
+
+    [theme.breakpoints.down('sm')]: {
+      width: '350px',
+      marginTop: '40px'
+    }
   },
   abstract: {
     position: 'absolute',
