@@ -10,7 +10,7 @@ import spiral from '../../assets/header/spiral.svg'
 import spiral2 from '../../assets/header/spiral2.svg'
 import man from '../../assets/header/man.png'
 import point from '../../assets/header/point.svg'
-import phone from '../../assets/header/phone.png'
+import phone from '../../assets/header/phone.gif'
 import SignUpForm from '../SignUpForm/SignUpForm'
 import useStyles from './useStyles'
 
@@ -89,6 +89,7 @@ const Header = () => {
             onClick={handleOpen}
             variant="contained"
             size="large"
+            disableRipple
           >
             <img style={{ width: '70%' }} src={getStarted} alt="Get started" />
           </IconButton>

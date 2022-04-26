@@ -25,6 +25,8 @@ const Footer = () => {
 
   const notify = () => toast.success('You have successfuly subscribed')
 
+  const date = new Date('2022-06-25')
+
   return (
     <Grid id="footer" container alignItems="center" className={classes.footer}>
       <Toaster position="top-right" reverseOrder={false} />
@@ -34,7 +36,7 @@ const Footer = () => {
           Count down to launch
         </Typography>
         <Typography className={classes.timer} data-aos="fade-up">
-          <Countdown date={Date.now() + 6000000000} />
+          <Countdown date={date} />
         </Typography>
 
         <Box

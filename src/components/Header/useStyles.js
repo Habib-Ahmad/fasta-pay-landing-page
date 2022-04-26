@@ -3,12 +3,12 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   header: {
     position: 'relative',
-    minHeight: '140vh',
+    minHeight: '160vh',
     padding: '10vw 10vw 0',
 
     [theme.breakpoints.down('sm')]: {
       marginTop: '50px',
-      minHeight: '115vh',
+      minHeight: '120vh',
       padding: '10vw 5vw 0'
     }
   },
@@ -52,10 +52,12 @@ const useStyles = makeStyles((theme) => ({
   man: {
     position: 'absolute',
     right: '5%',
-    bottom: 0,
+    bottom: '0',
 
     [theme.breakpoints.down('sm')]: {
-      right: '-35%'
+      bottom: 'auto',
+      top: '10%',
+      left: '45%'
     }
   },
   point: {
@@ -69,13 +71,13 @@ const useStyles = makeStyles((theme) => ({
   },
   phone: {
     position: 'absolute',
-    left: '30%',
+    left: '0%',
     top: '45%',
 
     [theme.breakpoints.down('sm')]: {
-      top: '5%',
-      left: '50%',
-      width: '150px'
+      top: '68%',
+      left: '10%',
+      width: '350px'
     }
   },
   heading: {
@@ -93,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
       '&.MuiTypography-root': {
         fontSize: '1.4rem',
         lineHeight: '3rem',
-        marginTop: '90vw'
+        marginTop: '20px'
       }
     }
   },

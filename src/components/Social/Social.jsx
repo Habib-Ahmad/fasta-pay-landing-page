@@ -9,10 +9,10 @@ const Social = () => {
 
   return (
     <Box className={classes.social}>
-      <IconButton href="https://twitter.com/fastaride" target="_blank">
+      <IconButton href="https://twitter.com/fastapay" target="_blank">
         <img src={twitter} alt="twitter" />
       </IconButton>
-      <IconButton href="https://instagram.com/fastaride" target="_blank">
+      <IconButton href="https://instagram.com/fastapay" target="_blank">
         <img src={instagram} alt="instagram" />
       </IconButton>
       <IconButton>

@@ -1,10 +1,7 @@
 import {
   Button,
   CircularProgress,
-  FormControlLabel,
   Modal,
-  Radio,
-  RadioGroup,
   TextField,
   Typography
 } from '@mui/material'
@@ -21,21 +18,18 @@ const SignUpForm = ({ open, handleClose, notify }) => {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState()
 
-  const handleSubmit = async ({ firstName, lastName, email, phone, as }) => {
-    const asNumber = parseInt(as)
+  const handleSubmit = async ({ firstName, lastName, email, phone }) => {
     await axios
       .post('/user/campaign', {
         firstName,
         lastName,
         email,
-        phone,
-        as: asNumber
+        phone
       })
       .then((res) => {
         if (res.status === 200) {
           setError('')
           setSuccess(res.data.message)
-          //setTimeout(() => setSuccess(''), 5000)
         }
       })
       .catch((error) => {
@@ -80,8 +74,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
                 firstName: '',
                 lastName: '',
                 email: '',
-                phone: '',
-                as: 0
+                phone: ''
               }}
               validationSchema={Yup.object().shape({
                 firstName: Yup.string().required('First Name is required'),
@@ -90,10 +83,7 @@ const SignUpForm = ({ open, handleClose, notify }) => {
                   .trim()
                   .required('E-mail is required')
                   .email('E-mail is not valid'),
-                phone: Yup.string().required('Phone Number is required'),
-                as: Yup.number()
-                  .required()
-                  .oneOf([1, 2], 'Please pick an option')
+                phone: Yup.string().required('Phone Number is required')
               })}
               onSubmit={handleSubmit}
             >
@@ -153,38 +143,6 @@ const SignUpForm = ({ open, handleClose, notify }) => {
                     value={values.phone}
                     onChange={handleChange}
                   />
-
-                  <Box>
-                    <RadioGroup
-                      name="as"
-                      sx={{ display: 'flex', flexDirection: 'row' }}
-                      value={values.as}
-                      onChange={handleChange}
-                    >
-                      <FormControlLabel
-                        name="as"
-                        value={1}
-                        control={<Radio />}
-                        label="Driver (Boss)"
-                      />
-                      <Box sx={{ width: '30px' }} />
-                      <FormControlLabel
-                        name="as"
-                        value={2}
-                        control={<Radio />}
-                        label="Guest (Passenger)"
-                      />
-                    </RadioGroup>
-                    <Typography
-                      style={{
-                        color: '#d32f2f',
-                        fontSize: 12,
-                        marginLeft: '16px'
-                      }}
-                    >
-                      {errors.as}
-                    </Typography>
-                  </Box>
 
                   <Button
                     type="submit"
