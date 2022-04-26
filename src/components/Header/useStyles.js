@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   leftBlob: {
     position: 'absolute',
     left: 0,
-    top: 'clamp(80px, 6vh, 100px)',
+    top: '20px',
     width: '4vw',
 
     [theme.breakpoints.down('sm')]: {
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
   man: {
     position: 'absolute',
-    right: '5%',
+    right: '3%',
     bottom: '0',
 
     [theme.breakpoints.down('sm')]: {
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
   point: {
     position: 'absolute',
-    right: '33%',
+    right: '30%',
     top: '50%',
 
     [theme.breakpoints.down('sm')]: {
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
   },
   phone: {
     position: 'absolute',
-    left: '0%',
+    left: '5%',
     top: '45%',
 
     [theme.breakpoints.down('sm')]: {
