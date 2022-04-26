@@ -8,7 +8,6 @@ on:
       - main
 
 #on: workflow_dispatch
-
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -32,9 +31,9 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: fastaride.ng
-          username: ${{ secrets.WHOGOHOSTFTPUSERNAME }}
-          password: ${{ secrets.WHOGOHOSTFTPPASSWORD }}
+          server: win5236.site4now.net
+          username: ${{ secrets.SMARTERASPFTPUSERNAME }}
+          password: ${{ secrets.SMARTERASPFTPPASSWORD }}
           local-dir: ./build/
           server-dir: /
           dangerous-clean-slate: true
