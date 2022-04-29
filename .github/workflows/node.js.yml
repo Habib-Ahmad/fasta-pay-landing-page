@@ -1,12 +1,10 @@
 #Action for depolying oatleaf front-end
 
 name: 🚀 DeployAction
-
 on:
   push:
     branches:
       - main
-
 #on: workflow_dispatch
 jobs:
   web-deploy:
@@ -31,9 +29,9 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: win5236.site4now.net
-          username: ${{ secrets.SMARTERASPFTPUSERNAME }}
-          password: ${{ secrets.SMARTERASPFTPPASSWORD }}
+          server: fastapay.ng
+          username: ${{ secrets.WHOGOHOSTFTPUSERNAME }}
+          password: ${{ secrets.WHOGOHOSTFTPPASSWORD }}
           local-dir: ./build/
           server-dir: /
           dangerous-clean-slate: true
