@@ -1,7 +1,6 @@
 #Action for depolying oatleaf front-end
 
 name: 🚀 DeployAction
-
 on:
   push:
     branches:
