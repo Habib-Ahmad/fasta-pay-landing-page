@@ -13,7 +13,6 @@ const NavBar = () => {
 
   const [displayDrawer, setDisplayDrawer] = useState(false)
   const [active, setActive] = useState('/')
-  console.log(active)
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -68,7 +67,7 @@ const NavBar = () => {
           }}
           disableRipple
         >
-          Fastpay for Bussiness
+          Fastapay for Bussiness
         </Button>
 
         {pathname === '/' && (
@@ -114,12 +113,15 @@ const NavBar = () => {
           onClose={toggleDrawer(false)}
           onOpen={toggleDrawer(true)}
         >
-          <Box className={classes.menuItems}>
+          <Box
+            className={classes.menuItems}
+            onClick={toggleDrawer(false)}
+            onKeyDown={toggleDrawer(false)}
+          >
             <Button
               onClick={() => {
                 setActive('/')
                 navigate('/')
-                toggleDrawer(false)
               }}
               className={active === '/' ? classes.activeNavBtn : classes.navBtn}
               disableRipple
@@ -131,32 +133,26 @@ const NavBar = () => {
               onClick={() => {
                 setActive('/business')
                 navigate('/business')
-                toggleDrawer(false)
               }}
               className={
                 active === '/business' ? classes.activeNavBtn : classes.navBtn
               }
               disableRipple
             >
-              Fastpay for Bussiness
+              Fastapay for Bussiness
             </Button>
 
             {pathname === '/' && (
               <>
                 <Button
                   className={classes.navBtn}
-                  onClick={toggleDrawer(false)}
                   href="#services"
                   disableRipple
                 >
                   Services
                 </Button>
 
-                <Button
-                  variant="contained"
-                  onClick={toggleDrawer(false)}
-                  href="#footer"
-                >
+                <Button variant="contained" href="#footer">
                   Contact us
                 </Button>
               </>

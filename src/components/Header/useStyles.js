@@ -3,12 +3,12 @@ import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   header: {
     position: 'relative',
-    minHeight: '160vh',
+    minHeight: '130vh',
     padding: '10vw 10vw 0',
 
     [theme.breakpoints.down('sm')]: {
       marginTop: '50px',
-      minHeight: '120vh',
+      minHeight: '640px',
       padding: '10vw 5vw 0'
     }
   },
@@ -71,8 +71,9 @@ const useStyles = makeStyles((theme) => ({
   },
   phone: {
     position: 'absolute',
-    left: '5%',
+    left: '10%',
     top: '45%',
+    width: '600px',
 
     [theme.breakpoints.down('sm')]: {
       display: 'none'
@@ -99,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btnWrapper: {
     marginLeft: '30vw',
-    marginTop: '-3vw',
+    marginTop: 0,
 
     [theme.breakpoints.down('md')]: {
       marginLeft: 0,

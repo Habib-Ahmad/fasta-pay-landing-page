@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   logo: {
-    width: 150
+    width: 120
   },
   navBtnWrapper: {
     [theme.breakpoints.down('sm')]: {

@@ -45,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     top: '40%',
 
     [theme.breakpoints.down('sm')]: {
-      left: '45%',
-      top: '60%',
+      left: '46%',
+      top: '40%',
       width: '200px'
     }
   },
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     width: '500px',
 
     [theme.breakpoints.down('sm')]: {
-      top: '5%',
+      top: '3%',
       width: '300px'
     }
   },
@@ -83,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
   },
   btnWrapper: {
     marginLeft: '30vw',
-    marginTop: '-3vw',
 
     [theme.breakpoints.down('md')]: {
       marginLeft: 0,
@@ -99,20 +98,45 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '85px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      marginTop: '300px',
+
+      '&>img': {
+        display: 'none'
+      }
+    }
   },
   feature: {
     width: '33%',
 
     '&>img': {
       display: 'block',
-      margin: '30px auto'
+      margin: '30px auto',
+
+      [theme.breakpoints.down('sm')]: {
+        margin: '0 20px 0 0'
+      }
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      marginBottom: '40px'
     }
   },
   featureText: {
     '&.MuiTypography-root': {
       textAlign: 'center',
-      fontWeight: '500'
+      fontWeight: '500',
+
+      [theme.breakpoints.down('sm')]: {
+        textAlign: 'left'
+      }
     }
   }
 }))

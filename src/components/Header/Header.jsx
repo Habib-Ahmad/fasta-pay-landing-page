@@ -93,17 +93,6 @@ const Header = () => {
           >
             <img style={{ width: '70%' }} src={getStarted} alt="Get started" />
           </IconButton>
-
-          {/* <Button
-            variant="outlined"
-            size="large"
-            sx={{ textTransform: 'none' }}
-            onClick={() => {
-              document.getElementById('services').scrollIntoView()
-            }}
-          >
-            View more
-          </Button> */}
         </Box>
       </Box>
 
